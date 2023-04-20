@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegistoComponent {
   registrationForm = new FormGroup({
-    nomeDeUtilizador: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl(''),
   });
 }
