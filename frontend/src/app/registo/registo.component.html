@@ -1,7 +1,11 @@
-<form [formGroup]="registrationForm">
-    <label for="username">Username: </label>
-    <input id="username" type="text" formControlName="username">
-    
-    <label for="password">Password: </label>
-    <input id="password" type="text" formControlName="password">
-</form>
+<div>
+    <form [formGroup]="registrationForm">
+        <label for="username">Username: </label>
+        <input id="username" type="text" formControlName="username">
+        
+        <label for="password">Password: </label>
+        <input id="password" type="text" formControlName="password">
+
+        <button>Register</button>
+    </form>
+</div>
