@@ -22,4 +22,13 @@ export class RegistoComponent {
       Validators.pattern("/\d/")
     ]),
   });
+
+  submit() {
+    console.log("TO IMPLEMENT");
+  }
+
+
+
+
+
 }
