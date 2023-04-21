@@ -22,3 +22,8 @@ div {
   width: 40%;
   border-radius: 5px;
 }
+
+ul {
+  margin: 0;
+  padding-left: 5%;
+}
