@@ -12,7 +12,10 @@ export class RegistoComponent {
     username: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern("/^[a-zA-Z0-9]+$/")
+      Validators.pattern("/^[a-zA-Z0-9]+$/"),
+      Validators.pattern("/[A-Z]/"),
+      Validators.pattern("/[a-z]/"),
+      Validators.pattern("/\d/")
     ]),
     password: new FormControl('', [
       Validators.required,
