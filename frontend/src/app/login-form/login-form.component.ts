@@ -11,4 +11,10 @@ export class LoginFormComponent {
     username: new FormControl(''),
     password: new FormControl(''),
   });
+
+  login(){
+    let username = this.loginForm.value["username"]
+    let password = this.loginForm.value["password"]
+  }
+
 }

@@ -6,13 +6,14 @@
     <br>
     <label for="password">Password: </label>
     <input id="password" type="password" formControlName="password">
+    <br>
+    <button id="login_btn" (click)="login()">
+      Login
+    </button>
   </form>
 
 
-  <button>
-    Login
-  </button>
-  <button>
+  <button routerLink='/register' >
     Register
   </button>
 
