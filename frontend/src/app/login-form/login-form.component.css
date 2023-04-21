@@ -1,0 +1,14 @@
+#login_container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  font-size: 2em;
+  height: 2em;
+  width: 7em;
+}
