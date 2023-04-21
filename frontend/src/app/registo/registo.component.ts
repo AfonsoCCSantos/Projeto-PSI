@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registo',
@@ -7,8 +7,16 @@ import { FormGroup, FormControl} from '@angular/forms';
   styleUrls: ['./registo.component.css']
 })
 export class RegistoComponent {
+  
   registrationForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.pattern("/^[a-zA-Z0-9]+$/")
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(8)
+    ]),
   });
 }
