@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 
+import { ValidatePassword } from '../validators/passwordValidator';
+
 @Component({
   selector: 'app-registo',
   templateUrl: './registo.component.html',
@@ -12,23 +14,17 @@ export class RegistoComponent {
     username: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
-      Validators.pattern("/^[a-zA-Z0-9]+$/"),
+      Validators.pattern("^[a-zA-Z0-9]+$"),
     ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
-      Validators.pattern("/[A-Z]/"),
-      Validators.pattern("/[a-z]/"),
-      Validators.pattern("/\d/")
+      ValidatePassword
     ]),
   });
 
   submit() {
-    console.log("TO IMPLEMENT");
+    console.log(this.registrationForm.valid);
+    this.registrationForm.reset();
   }
-
-
-
-
-
 }
