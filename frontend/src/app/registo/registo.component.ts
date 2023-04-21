@@ -13,13 +13,13 @@ export class RegistoComponent {
       Validators.required,
       Validators.minLength(3),
       Validators.pattern("/^[a-zA-Z0-9]+$/"),
-      Validators.pattern("/[A-Z]/"),
-      Validators.pattern("/[a-z]/"),
-      Validators.pattern("/\d/")
     ]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(8)
+      Validators.minLength(8),
+      Validators.pattern("/[A-Z]/"),
+      Validators.pattern("/[a-z]/"),
+      Validators.pattern("/\d/")
     ]),
   });
 }
