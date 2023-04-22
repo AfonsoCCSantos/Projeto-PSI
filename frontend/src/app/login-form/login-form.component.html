@@ -1,6 +1,11 @@
 
 <div id="login_container">
+
+  <h1>Welcome!</h1>
+
+
   <form [formGroup]="loginForm">
+    <h2>Login:</h2>
     <label for="user-name">Username: </label>
     <input id="user-name" type="text" formControlName="username">
     <br>
@@ -13,9 +18,8 @@
   </form>
 
 
-  <button routerLink='/register' >
-    Register
-  </button>
+  <a routerLink="/forgot-password" >Forgot your password?</a>
+  <a routerLink="register" >Don't have an account?</a>
 
 </div>
 
