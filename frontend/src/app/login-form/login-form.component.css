@@ -39,6 +39,7 @@ button{
 
 button:hover{
   background-color: #2a77f6;
+  cursor: pointer;
 }
 
 .textInput{
