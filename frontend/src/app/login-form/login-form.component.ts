@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login-form',
@@ -8,11 +8,13 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class LoginFormComponent {
   loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('',[Validators.required,Validators.min(4)]),
+    password: new FormControl('',[Validators.required]),
   });
 
   login(){
+    if(!this.loginForm.valid) console.log(this.loginForm.)
+
     let username = this.loginForm.value["username"]
     let password = this.loginForm.value["password"]
   }
