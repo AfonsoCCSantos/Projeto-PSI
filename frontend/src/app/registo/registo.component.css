@@ -29,7 +29,7 @@ p {
   margin-right: 7%;
 }
 
-span {
+.errorMessage {
   color: red;
 }
 

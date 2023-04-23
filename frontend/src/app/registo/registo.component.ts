@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { ValidatePassword } from '../validators/passwordValidator';
+import { ValidatePasswordNumber, ValidatePasswordLowerCase, ValidatePasswordUpperCase } from '../validators/passwordValidator';
 
 @Component({
   selector: 'app-registo',
@@ -26,17 +26,21 @@ export class RegistoComponent {
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
-      ValidatePassword
+      ValidatePasswordLowerCase,
+      ValidatePasswordNumber,
+      ValidatePasswordUpperCase
     ]),
   });
 
   submit() {
     if (this.registrationForm.valid) {
       this.registrationSuccessful = true;
+      this.registrationFailed = false;
     }
     else {
       this.registrationFailed = true;
     }
+    this.registrationForm.reset();
   }
 
   goToLogin() {
