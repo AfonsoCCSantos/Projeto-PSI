@@ -1,0 +1,60 @@
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+p {
+  text-align: center;
+}
+
+#loginBox {
+  width: 25%;
+  margin: auto;
+  border: 3px solid black;
+  padding: 1%;
+  height: 35%;
+}
+
+.submitButton {
+  margin: auto;
+  width: 40%;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5%;
+  margin-right: 7%;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.goToLoginButton {
+  margin: auto;
+  width: 40%;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 7%;
+}
+
+.soleButton {
+  margin: auto;
+  width: 40%;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5%;
+}
+
+#buttons {
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding-left: 5%;
+}

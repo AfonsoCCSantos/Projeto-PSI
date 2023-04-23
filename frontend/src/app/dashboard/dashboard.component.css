@@ -1,0 +1,33 @@
+header {
+  height: 3%;
+  padding: 2%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: black solid 2px;
+  position: sticky;
+}
+#userProfile {
+  width: 5%;
+  background-color: aqua;
+}
+
+.menuOption {
+  width: 6%;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5% ;
+  align-self: center;
+  text-align: center;
+}
+
+.menuOption:hover {
+  width: 8%;
+}
+
+#searchBar {
+  background-color: gray;
+  border-radius: inherit;
+  align-self: center;
+  width: 20%;
+}
+
+
