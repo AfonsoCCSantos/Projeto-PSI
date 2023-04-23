@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemSearchbarComponent } from './item-searchbar/item-searchbar.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemSearchbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserProfileComponent,
+
   ],
   imports: [
     BrowserModule,
