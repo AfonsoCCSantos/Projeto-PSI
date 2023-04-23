@@ -29,6 +29,10 @@ p {
   margin-right: 7%;
 }
 
+span {
+  color: red;
+}
+
 .goToLoginButton {
   margin: auto;
   width: 40%;
@@ -36,6 +40,14 @@ p {
   display: inline-block;
   margin-top: 5%;
   margin-left: 7%;
+}
+
+.soleButton {
+  margin: auto;
+  width: 40%;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5%;
 }
 
 #buttons {

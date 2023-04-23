@@ -14,6 +14,8 @@ export class RegistoComponent {
   constructor(private router : Router) {}
 
   registrationSuccessful: boolean = false;
+  registrationFailed: boolean = false;
+  errorMessages: string[] = [];
   
   registrationForm = new FormGroup({
     username: new FormControl('', [
@@ -32,7 +34,9 @@ export class RegistoComponent {
     if (this.registrationForm.valid) {
       this.registrationSuccessful = true;
     }
-    this.registrationForm.reset();
+    else {
+      this.registrationFailed = true;
+    }
   }
 
   goToLogin() {
@@ -46,4 +50,5 @@ export class RegistoComponent {
   get password() {
     return this.registrationForm.get('password') as FormControl;
   }
+
 }

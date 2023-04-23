@@ -4,6 +4,10 @@
 
         <label for="username">Username: </label>
         <input id="username" type="text" formControlName="username">
+        <div *ngIf="registrationFailed">
+            <span *ngIf="this.username.hasError('required')">An username is required</span>
+            <span *ngIf="this.username.hasError('minlength')">An username has to be at least 3 characters long</span>
+        </div>
 
         <label for="password">Password: </label>
         <input id="password" type="password" formControlName="password">
@@ -17,8 +21,8 @@
             Account created! You can now login.
         </p>
         <div id="buttons">
-            <button class="submitButton" (click)="submit()">Register</button>
-            <button class="goToLoginButton" (click)="goToLogin()">Go to Login</button>
+            <button *ngIf="!registrationSuccessful" class="submitButton" (click)="submit()">Register</button>
+            <button [class.goToLoginButton]="!registrationForm" [class.soleButton]="registrationSuccessful" (click)="goToLogin()">Go to Login</button>
         </div>
     </form>
 </div>
