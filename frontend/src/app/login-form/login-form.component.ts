@@ -13,7 +13,7 @@ export class LoginFormComponent {
   });
 
   login(){
-    if(!this.loginForm.valid) console.log(this.loginForm.)
+    if(!this.loginForm.valid) console.log("empty fields")
 
     let username = this.loginForm.value["username"]
     let password = this.loginForm.value["password"]
