@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { ValidatePassword } from '../validators/passwordValidator';
 
@@ -9,6 +10,10 @@ import { ValidatePassword } from '../validators/passwordValidator';
   styleUrls: ['./registo.component.css']
 })
 export class RegistoComponent {
+
+  constructor(private router : Router) {}
+
+  registrationSuccessful: boolean = false;
   
   registrationForm = new FormGroup({
     username: new FormControl('', [
@@ -24,7 +29,21 @@ export class RegistoComponent {
   });
 
   submit() {
-    console.log(this.registrationForm.valid);
+    if (this.registrationForm.valid) {
+      this.registrationSuccessful = true;
+    }
     this.registrationForm.reset();
+  }
+
+  goToLogin() {
+    this.router.navigate(["/login"]);
+  }
+
+  get username() {
+    return this.registrationForm.get('username') as FormControl;
+  }
+
+  get password() {
+    return this.registrationForm.get('password') as FormControl;
   }
 }

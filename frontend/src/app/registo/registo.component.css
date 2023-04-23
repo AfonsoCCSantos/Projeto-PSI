@@ -8,7 +8,11 @@ input {
   box-sizing: border-box;
 }
 
-div {
+p {
+  text-align: center;
+}
+
+#loginBox {
   width: 25%;
   margin: auto;
   border: 3px solid black;
@@ -17,10 +21,25 @@ div {
 }
 
 .submitButton {
-  display: block;
   margin: auto;
   width: 40%;
   border-radius: 5px;
+  display: inline-block;
+  margin-top: 5%;
+  margin-right: 7%;
+}
+
+.goToLoginButton {
+  margin: auto;
+  width: 40%;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5%;
+  margin-left: 7%;
+}
+
+#buttons {
+  text-align: center;
 }
 
 ul {

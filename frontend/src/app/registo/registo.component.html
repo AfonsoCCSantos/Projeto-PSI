@@ -1,16 +1,24 @@
-<div>
+<div id="loginBox">
     <form [formGroup]="registrationForm">
+
+
         <label for="username">Username: </label>
         <input id="username" type="text" formControlName="username">
-        
+
         <label for="password">Password: </label>
         <input id="password" type="password" formControlName="password">
-        <ul>
+        <ul *ngIf="!registrationSuccessful">
             <li>At least 8 characters</li>
             <li>An uppercase letter</li>
             <li>A lowercase letter</li>
             <li>A number</li>
         </ul>
-        <button class="submitButton" (click)="submit()">Register</button>
+        <p *ngIf="registrationSuccessful">
+            Account created! You can now login.
+        </p>
+        <div id="buttons">
+            <button class="submitButton" (click)="submit()">Register</button>
+            <button class="goToLoginButton" (click)="goToLogin()">Go to Login</button>
+        </div>
     </form>
 </div>
