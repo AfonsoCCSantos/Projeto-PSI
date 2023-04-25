@@ -10,14 +10,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemSearchbarComponent } from './item-searchbar/item-searchbar.component';
-
+import { UserProfileComponent } from './user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     ItemSearchbarComponent,
     DashboardComponent,
-    RegistoComponent
+    RegistoComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
