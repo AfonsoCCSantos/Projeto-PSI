@@ -1,0 +1,25 @@
+
+<div id="login_container">
+
+  <h1>Welcome!</h1>
+
+  <form [formGroup]="loginForm">
+    <h2>Login</h2>
+
+    <label for="user-name">Username</label>
+    <input class="textInput" id="user-name" type="text" formControlName="username">
+
+    <label for="password">Password </label>
+    <input class="textInput" id="password" type="password" formControlName="password">
+
+    <button id="login_btn" (click)="login()">
+      Login
+    </button>
+  </form>
+
+
+  <a routerLink="/forgot-password">Forgot your password?</a>
+  <p> Don't have an account? <a routerLink="/register" >Create one</a></p>
+
+</div>
+
