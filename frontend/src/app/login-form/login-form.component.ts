@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UserService} from "../user.service";
+import {User} from "../user";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-form',
@@ -7,6 +10,10 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent {
+
+  constructor(private user_service : UserService,private router: Router) {
+  }
+
   loginForm = new FormGroup({
     username: new FormControl('',[Validators.required,Validators.min(4)]),
     password: new FormControl('',[Validators.required]),
@@ -15,8 +22,15 @@ export class LoginFormComponent {
   login(){
     if(!this.loginForm.valid) console.log("empty fields")
 
-    let username = this.loginForm.value["username"]
+    let username = this.loginForm.value["username"]!
     let password = this.loginForm.value["password"]
+    let user! : User;
+    this.user_service.getUserByName(username).subscribe(u =>{
+      user = u;
+    });
+    if(user.password == password){
+      this.router.navigate(["dashboard"]);
+    }
   }
 
 }

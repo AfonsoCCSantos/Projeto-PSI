@@ -17,14 +17,14 @@ export class UserProfileComponent {
 
   user: User | undefined;
 
-  ngOnInit(): void {
-    this.getUser();
-  }
+  // ngOnInit(): void {
+  //   this.getUser();
+  // }
 
-  getUser(): void {
-    const id = String(this.route.snapshot.paramMap.get('userName'));
-    this.userService.getHero(id)
-      .subscribe(user => this.user = user);
-  }
+  // getUser(): void {
+  //   const id = String(this.route.snapshot.paramMap.get('userName'));
+  //   this.userService.getHero(id)
+  //     .subscribe(user => this.user = user);
+  // }
 
 }
