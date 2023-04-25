@@ -3,14 +3,14 @@ header {
   padding: 2%;
   display: flex;
   justify-content: space-around;
-  border-bottom: #2a77f6 solid 2px;
+  border-bottom: #2a77f6 solid 3px;
   position: sticky;
   color: white;
 }
 
 .menuOption {
   width: 6%;
-  border-bottom: 1px solid #2a77f6;
+  border-bottom: 2px solid #2a77f6;
   padding-bottom: 0.5% ;
   align-self: center;
   text-align: center;
