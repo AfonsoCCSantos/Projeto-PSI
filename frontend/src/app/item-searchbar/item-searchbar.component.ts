@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Item } from 'src/Item';
+import { Item } from 'src/app/Item';
 import { ItemService } from '../item.service';
 
 import {
@@ -29,5 +29,5 @@ export class ItemSearchbarComponent implements OnInit {
 
     search(term: string): void {
         this.searchTerms.next(term);
-    } 
+    }
 }
