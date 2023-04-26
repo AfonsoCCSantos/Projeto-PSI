@@ -23,7 +23,7 @@ export class UserProfileComponent {
 
   getUser(): void {
     const id = String(this.route.snapshot.paramMap.get('userName'));
-    this.userService.getHero(id)
+    this.userService.getUser(id)
       .subscribe(user => this.user = user);
   }
 
