@@ -11,8 +11,9 @@ export class UserService {
   private baseUrl = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-  getUser(userName: string): Observable<User> {
-    const url = `${ this.baseUrl + "/profile"}/${userName}`;
-    return this.http.get<User>( url);
+
+  getUserByName(username: string): Observable<User> {
+    const url = `${ this.baseUrl + "/user"}/${username}`;
+    return this.http.get<User>(url);
   }
 }
