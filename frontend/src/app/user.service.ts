@@ -13,6 +13,6 @@ export class UserService {
 
   getUserByName(username: string): Observable<User> {
     const url = `${ this.baseUrl + "/user"}/${username}`;
-    return this.http.get<User>( url);
+    return this.http.get<User>(url);
   }
 }

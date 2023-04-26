@@ -29,6 +29,8 @@ export class LoginFormComponent {
       user = u;
     });
     if(user.password == password){
+      localStorage.removeItem("user_name");// This makes the user log in always, removing this and add to log out??
+      localStorage.setItem("user_name",user.user_name);
       this.router.navigate(["dashboard"]);
     }
   }
