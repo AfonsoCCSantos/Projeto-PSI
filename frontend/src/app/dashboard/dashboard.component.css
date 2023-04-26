@@ -22,20 +22,17 @@ header {
 }
 
 
-.menuOption:after {
+.menuOption::after {
+  content: "";
   display: block;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  content: '';
+  position: relative;
+  margin-left: 0;
   border-bottom: solid 3px #019fb6;
   transform: scale(0);
   transition: transform 250ms ease-in-out;
-  width:3px;
 }
 
-.menuOption:hover:after {
-  width: 400px;
-  margin-left: -200px;
-  transform: scale(1);
+.menuOption:hover::after {
+  transform: scaleX(1);
 }
 
