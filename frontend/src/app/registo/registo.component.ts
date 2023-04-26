@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -13,9 +13,11 @@ export class RegistoComponent {
 
   constructor(private router : Router) {}
 
+  // @ViewChild('passwordBox') passwordBox!: ElementRef;
   registrationSuccessful: boolean = false;
   registrationFailed: boolean = false;
   errorMessages: string[] = [];
+  alreadyTypingPassword: boolean = false;
   
   registrationForm = new FormGroup({
     username: new FormControl('', [
@@ -31,6 +33,10 @@ export class RegistoComponent {
       ValidatePasswordUpperCase
     ]),
   });
+
+  disablePasswordInformation() {
+    this.alreadyTypingPassword = true;
+  }
 
   submit() {
     if (this.registrationForm.valid) {

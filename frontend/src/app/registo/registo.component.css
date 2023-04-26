@@ -1,32 +1,66 @@
-input {
+#loginBox{
+  color: #e7e7e7;
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b2323;
+}
+
+form{
+  background-color: #414a4c;
+  width: 30%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  margin-top: 0.5em;
+}
+
+.textInput{
+  padding: 0.7em;
 }
 
 p {
   text-align: center;
 }
 
-#loginBox {
-  width: 25%;
-  margin: auto;
-  border: 3px solid black;
-  padding: 1%;
-  height: 35%;
+h1,h2{
+  color: white;
+}
+
+h1{
+  justify-self: flex-start;
+}
+
+button:hover{
+  background-color: #2a77f6;
+  cursor: pointer;
+}
+
+button {
+  font-weight: bold;
+  font-size: 1em;
+  border:none;
+  color:inherit;
+  background-color: #1a65f1;
+  display: inline-block;
+  margin:auto;
+  width: 40%;
+  margin-top: 1em;
+  padding: 0.8em;
 }
 
 .submitButton {
-  margin: auto;
-  width: 40%;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 5%;
   margin-right: 7%;
+}
+
+#password {
+  margin-bottom: 1em;
 }
 
 .errorMessage {
@@ -34,20 +68,7 @@ p {
 }
 
 .goToLoginButton {
-  margin: auto;
-  width: 40%;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 5%;
   margin-left: 7%;
-}
-
-.soleButton {
-  margin: auto;
-  width: 40%;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 5%;
 }
 
 #buttons {
