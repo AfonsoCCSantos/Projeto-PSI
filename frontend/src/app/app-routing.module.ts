@@ -10,7 +10,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
   {path: "dashboard", component: DashboardComponent },
-  {path: "profile", component: UserProfileComponent},
+  {path: "profile/:userName", component: UserProfileComponent},
   { path: 'login', component: LoginFormComponent},
   {path: 'register', component: RegistoComponent }
 ];
