@@ -3,21 +3,39 @@ header {
   padding: 2%;
   display: flex;
   justify-content: space-around;
-  border-bottom: #2a77f6 solid 3px;
+  border-bottom: solid 3px;
+  background-color: #1b2323;
+  border-image-slice: 2;
+  border-image-source: linear-gradient(to right, #009FFD, #42378F);
   position: sticky;
   color: white;
 }
 
 .menuOption {
   width: 6%;
-  border-bottom: 2px solid #2a77f6;
+  /*border-bottom: 2px solid;*/
+  /*border-image-slice: 2;*/
+  /*border-image-source: linear-gradient(to right, #009FFD, #42378F);*/
   padding-bottom: 0.5% ;
   align-self: center;
   text-align: center;
 }
 
-.menuOption:hover {
-  width: 8%;
+
+.menuOption:after {
+  display: block;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  content: '';
+  border-bottom: solid 3px #019fb6;
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
+  width:3px;
 }
 
+.menuOption:hover:after {
+  width: 400px;
+  margin-left: -200px;
+  transform: scale(1);
+}
 
