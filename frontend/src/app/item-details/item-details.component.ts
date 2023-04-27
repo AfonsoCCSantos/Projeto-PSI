@@ -11,7 +11,7 @@ import { Item } from '../Item';
   styleUrls: ['./item-details.component.css']
 })
 export class ItemDetailsComponent implements OnInit {
-    
+
     @Input() item?: Item;
 
     constructor(
