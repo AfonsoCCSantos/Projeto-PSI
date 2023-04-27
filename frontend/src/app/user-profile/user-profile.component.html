@@ -1,10 +1,85 @@
-<div *ngIf="user">
-    <h2>{{user.user_name | uppercase}} Profile</h2>
-    <img src ="defaul_image.jpg" alt=" {{user.user_name}} Image">
-    <button type="button"> Library </button>
-    <button type="button"> Wishlists </button>
-    <button type="button"> My Lists </button>
-    <button type="button"> Following </button>
-    <button type="button"> Followers </button>
-</div>
+    <app-dashboard></app-dashboard>
+    <div class="profile">
+
+      <div class = "profile-info">
+        <img class="profile-image" src="../../assets/images/white_profile.png" alt="Foto de perfil">
+        <h2>Diogo Profile</h2>
+        <div class="profile-stats">
+            <ul class="profile-stats-list">
+              <li>
+                <span class="profile-stat-count"> 188 </span> Followers
+              </li>
+              <li>
+                <span class="profile-stat-count"> 188 </span> Following
+              </li>
+            </ul>
+        </div>
+        <button type="button"> My Lists </button>
+      </div>
+
+      <div class="library">
+        <h2> Library Preview </h2>
+        <ul class="library-items">
+          <li>
+              <img src="../../assets/images/mine.png" class="item_image">
+              <p> Minecraft</p>
+          </li>
+
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+
+
+
+
+        </ul>
+        <button type="button"> Open Library </button>
+      </div>
+
+
+      <div class="wishlist">
+        <h2> Wishlist Preview </h2>
+        <ul class="wishlist-items">
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+          <li>
+            <img src="../../assets/images/mine.png" class="item_image">
+            <p> Minecraft</p>
+          </li>
+
+
+        </ul>
+        <button type="button"> Open Wishlist </button>
+
+      </div>
+
+
+<!--      <div class="buttons">
+        <button type="button"> Library </button>
+        <button type="button"> Wishlists </button>
+        <button type="button"> Diogo Costume Lists </button>
+        <button type="button"> Following </button>
+        <button type="button"> Followers </button>
+      </div>-->
+
+    </div>
 
