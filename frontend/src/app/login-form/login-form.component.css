@@ -21,6 +21,7 @@ form{
   background-color: #414a4c;
   width: 30%;
   padding: 1em;
+  margin: 1em;
   display: flex;
   flex-direction: column;
 }
@@ -43,6 +44,7 @@ button:hover{
 
 .textInput{
   padding: 0.7em;
+  border-radius: 0.7em;
 }
 
 a{
@@ -55,4 +57,13 @@ a:hover{
 
 label{
   margin-top: 0.5em;
+}
+
+#failed_login_msg{
+  color: #e73131;
+  text-align: center;
+}
+
+.failed_login_input{
+  border: 0.2em solid #e73131 ;
 }
