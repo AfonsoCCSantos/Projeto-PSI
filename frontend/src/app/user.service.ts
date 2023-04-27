@@ -9,7 +9,8 @@ import { map, tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:3000';
+  private userUrl = "/user";
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -17,12 +18,12 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserByName(username: string): Observable<User> {
-    const url = `${ this.baseUrl + "/user"}/${username}`;
+    const url = `${this.userUrl}/${username}`;
     return this.http.get<User>(url);
   }
   
   registerUser(user: User): Observable<boolean> {
-    const url = `${ this.baseUrl + "/user/register"}`;
+    const url = `${this.userUrl + "/register"}`;
     return this.http.post<HttpResponse<any>>(url, user, this.httpOptions).pipe(
       map((response : HttpResponse<any>) => {
         return response.status === 200;
