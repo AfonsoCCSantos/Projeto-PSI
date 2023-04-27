@@ -6,6 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get("init", users_controller.init_test)
+router.get("/init", users_controller.init_test)
 
 module.exports = router;

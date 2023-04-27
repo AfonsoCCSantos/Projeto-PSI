@@ -78,11 +78,12 @@ function userExits(username) {
 };
 
 exports.init_test = (req, res, next) => {
-    let u1 = new User({name:"Alex", password:"Alexandre1"})
+    let u1 = new User({name:"alex", password:"lexandre1"})
     u1.save(err => {
         if(err){
             next(err);
         }
     });
+    res.send("Done")
 
 }
