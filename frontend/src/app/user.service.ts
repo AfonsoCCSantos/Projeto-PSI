@@ -8,12 +8,11 @@ import { User } from './user';
 })
 export class UserService {
 
-  private baseUrl = 'http://localhost:3000';
+  private userUrl = "/user";
   constructor(private http: HttpClient) { }
 
-
   getUserByName(username: string): Observable<User> {
-    const url = `${ this.baseUrl + "/user"}/${username}`;
+    const url = `${this.userUrl}/${username}`;
     return this.http.get<User>(url);
   }
 }
