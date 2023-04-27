@@ -31,7 +31,7 @@ ul {
 }
 
 ul:not(.profile-stats-list) {
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 300px;
   height: 400px;
   max-width: 600px;
