@@ -15,14 +15,17 @@
   text-align: left;
 }
 
+.profile-info h2{
+  max-width: 270px;
+}
+
 .profile-image {
   width: 200px;
   height: 200px;
   border-radius: 50px;
-  filter: drop-shadow(0 0 8px #459BBF);
+  border: 5px solid black;
+  /*filter: drop-shadow(0 0 0px #459BBF);*/
 }
-
-
 
 ul {
   margin: 0;
