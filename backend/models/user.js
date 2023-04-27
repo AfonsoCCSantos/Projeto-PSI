@@ -16,7 +16,7 @@ const UserSchema = new Schema({
     },
     validate: {
       validator: function(username) {
-        return /\^[a-zA-Z0-9]+$/.test(username);
+        return /^[a-zA-Z0-9]+$/.test(username);
       },
       message: 'Invalid username'
     }
