@@ -1,9 +1,10 @@
 <header>
-  <div id="userProfile">USER PROFILE</div>
-  <div class="menuOption">Biblioteca</div>
-  <div class="menuOption">Listas</div>
-  <div class="menuOption">A Seguir</div>
-  <div class="menuOption">Seguidores</div>
+  <a *ngIf=user routerLink="/profile/{{user}}">{{user}} Profile</a>
+  <a *ngIf=!user routerLink="/login">Log In</a>
+  <div class="menuOption">Library</div>
+  <div class="menuOption">Lists</div>
+  <div class="menuOption">Following</div>
+  <div class="menuOption">Followers</div>
   <app-item-searchbar></app-item-searchbar>
 </header>
 

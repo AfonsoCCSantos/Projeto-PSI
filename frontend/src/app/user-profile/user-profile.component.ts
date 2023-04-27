@@ -17,9 +17,9 @@ export class UserProfileComponent {
 
   user: User | undefined;
 
-  // ngOnInit(): void {
-  //   this.getUser();
-  // }
+   ngOnInit(): void {
+     this.getUser();
+   }
 
   getUser(): void {
     const user_name = String(this.route.snapshot.paramMap.get('userName'));

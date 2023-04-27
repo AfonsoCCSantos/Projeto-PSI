@@ -3,4 +3,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  /*background-color: #1b2323;*/
+  font-family: Bahnschrift;
+  background-image: linear-gradient(to bottom right, #1b2323, #3b444b);
 }

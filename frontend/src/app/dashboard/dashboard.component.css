@@ -3,31 +3,36 @@ header {
   padding: 2%;
   display: flex;
   justify-content: space-around;
-  border-bottom: black solid 2px;
+  border-bottom: solid 3px;
+  background-color: #1b2323;
+  border-image-slice: 2;
+  border-image-source: linear-gradient(to right, #009FFD, #42378F);
   position: sticky;
-}
-#userProfile {
-  width: 5%;
-  background-color: aqua;
+  color: white;
 }
 
 .menuOption {
   width: 6%;
-  border-bottom: 1px solid black;
+  /*border-bottom: 2px solid;*/
+  /*border-image-slice: 2;*/
+  /*border-image-source: linear-gradient(to right, #009FFD, #42378F);*/
   padding-bottom: 0.5% ;
   align-self: center;
   text-align: center;
 }
 
-.menuOption:hover {
-  width: 8%;
+
+.menuOption::after {
+  content: "";
+  display: block;
+  position: relative;
+  margin-left: 0;
+  border-bottom: solid 3px #019fb6;
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
 }
 
-#searchBar {
-  background-color: gray;
-  border-radius: inherit;
-  align-self: center;
-  width: 20%;
+.menuOption:hover::after {
+  transform: scaleX(1);
 }
-
 
