@@ -28,6 +28,9 @@
         <p *ngIf="registrationFailed">
             Registration failed. Please check the requirements and try again.
         </p>
+        <p *ngIf="usernameAlreadyTaken" class="errorMessage">
+            This username has already been taken. Please register with a different username.
+        </p>
         <div id="buttons">
             <button *ngIf="!registrationSuccessful" class="submitButton" (click)="submit()">Register</button>
             <button [class.goToLoginButton]="!registrationSuccessful" [class.soleButton]="registrationSuccessful" (click)="goToLogin()">Go to Login</button>

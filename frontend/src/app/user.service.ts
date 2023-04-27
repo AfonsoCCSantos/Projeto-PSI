@@ -13,14 +13,14 @@ export class UserService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-
+  
   constructor(private http: HttpClient) { }
 
   getUserByName(username: string): Observable<User> {
     const url = `${ this.baseUrl + "/user"}/${username}`;
     return this.http.get<User>(url);
   }
-
+  
   registerUser(user: User): Observable<boolean> {
     const url = `${ this.baseUrl + "/user/register"}`;
     return this.http.post<HttpResponse<any>>(url, user, this.httpOptions).pipe(
