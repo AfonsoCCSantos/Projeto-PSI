@@ -1,3 +1,4 @@
+const User = require("../models/user");
 const UserModel = require("../models/user");
 
 exports.getUser = (req, res) => {
@@ -10,7 +11,7 @@ exports.getUser = (req, res) => {
 }
 
 exports.getUserByUserName = (req, res) => {
-    UserModel.findOne({ userName: req.params.userName })
+    User.findOne({ userName: req.params.userName })
       .then((user) => {
         if (!user) {
           return res.status(404).send(
@@ -36,7 +37,7 @@ exports.getUserByUserName = (req, res) => {
   };
 
 exports.registerUser = (req, res, next) => {
-  UserModel.findOne({ userName: req.params.name})
+  User.findOne({ userName: req.params.name})
     .then((user) => {
       userExists = userExits(user.name);
 
@@ -66,7 +67,7 @@ exports.registerUser = (req, res, next) => {
 }
 
 function userExits(username) {
-  UserModel.findOne({ userName: username })
+  User.findOne({ userName: username })
       .then((user) => {
         if (!user) {
           return true;
@@ -75,3 +76,13 @@ function userExits(username) {
         return false;
       });
 };
+
+exports.init_test = (req, res, next) => {
+    let u1 = new User({name:"Alex", password:"Alexandre1"})
+    u1.save(err => {
+        if(err){
+            next(err);
+        }
+    });
+
+}
