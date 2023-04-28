@@ -16,6 +16,7 @@ export class UserService {
   };
 
   constructor(private http: HttpClient) { }
+  
 
   getUserByName(username: string): Observable<User> {
     const url = `${this.userUrl}/${username}`;

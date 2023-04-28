@@ -45,7 +45,7 @@ export class RegistoComponent {
       let succeeded = false;
       const newUser: User = {
         _id: '',
-        user_name: this.username.value,
+        name: this.username.value,
         password: this.password.value,
         image: new ArrayBuffer(0)
       };
