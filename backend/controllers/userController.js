@@ -16,6 +16,9 @@ exports.getUserByUserName = (req, res,next) => {
             if(err){
                 next(err);
             }
+            if(user == null){
+                res.status(404);
+            }
             res.json(user);
         })
 };
