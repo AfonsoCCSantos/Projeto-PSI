@@ -25,6 +25,7 @@ exports.registerUser = (req, res, next) => {
     .then((user) => {
       if (user) {
         res.status(302);
+        res.send();
       }
       else {
         const user = new User({
@@ -36,7 +37,8 @@ exports.registerUser = (req, res, next) => {
             return next(err);
           }
         });
-        res.status(200)
+        res.status(200);
+        res.send();
       }
     });
 }
