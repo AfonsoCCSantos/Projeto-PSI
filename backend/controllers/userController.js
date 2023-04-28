@@ -10,36 +10,20 @@ exports.getUser = (req, res) => {
     }
 }
 
-exports.getUserByUserName = (req, res) => {
-    User.findOne({ userName: req.params.userName })
-      .then((user) => {
-        if (!user) {
-          return res.status(404).send(
-            jsend(404, {
-              message: "User not found!",
-            })
-          );
-        }
-  
-        res.status(200).send(
-          jsend(200, {
-            user,
-          })
-        );
-      })
-      .catch((err) => {
-        res.status(404).send(
-          jsend(404, {
-            message: "User not found!",
-          })
-        );
-      });
-  };
+exports.getUserByUserName = (req, res,next) => {
+    User.findOne({name:req.params.name})
+        .exec((err,user) =>{
+            if(err){
+                next(err);
+            }
+            res.json(user);
+        })
+};
 
 exports.registerUser = (req, res, next) => {
   User.findOne({ userName: req.params.name})
     .then((user) => {
-      userExists = userExits(user.name);
+      let userExists = userExits(user.name);
 
       if(userExits) {
         res.status(302).send(
@@ -59,9 +43,7 @@ exports.registerUser = (req, res, next) => {
                 return err(next);
         });
   
-        res.status(200).send(
-          jsend(200)
-        );
+        res.status(200)
       }
     });
 }

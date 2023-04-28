@@ -28,18 +28,28 @@ export class LoginFormComponent {
     let user! : User;
     this.user_service.getUserByName(username).subscribe(u =>{
       user = u;
-    });
-    if(user.password == password){
-      localStorage.removeItem("user_name");// This makes the user log in always, removing this and add to log out??
-      localStorage.setItem("user_name",user.user_name);
-      this.router.navigate(["dashboard"]);
-    }
-    else{
-      this.login_failed = true
-      let inputs = document.querySelectorAll(".textInput")
-      inputs.forEach(i => i.classList.add("failed_login_input") )
+      if(!user){
+        console.log("username nao existe")
+        this.login_failed = true
+        let inputs = document.querySelectorAll(".textInput")
+        inputs.forEach(i => i.classList.add("failed_login_input") )
+        return;
+      }
 
-    }
+      if(user.password == password){
+        localStorage.removeItem("user_name");// This makes the user log in always, removing this and add to log out??
+        localStorage.setItem("user_name",user.name);
+        this.router.navigate(["dashboard"]);
+      }
+      else{
+        this.login_failed = true
+        let inputs = document.querySelectorAll(".textInput")
+        inputs.forEach(i => i.classList.add("failed_login_input") )
+
+      }
+    });
+
+
   }
 
 }
