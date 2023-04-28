@@ -8,7 +8,7 @@ import { User } from './user';
 })
 export class UserService {
 
-  private userUrl = "/user";
+  private userUrl = "api/user";
   constructor(private http: HttpClient) { }
 
   getUserByName(username: string): Observable<User> {

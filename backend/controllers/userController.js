@@ -1,3 +1,4 @@
+const User = require("../models/user");
 const UserModel = require("../models/user");
 
 exports.getUser = (req, res) => {
@@ -9,43 +10,23 @@ exports.getUser = (req, res) => {
     }
 }
 
-exports.getUserByUserName = (req, res) => {
-    UserModel.findOne({ userName: req.params.userName })
-      .then((user) => {
-        if (!user) {
-          return res.status(404).send(
-            jsend(404, {
-              message: "User not found!",
-            })
-          );
-        }
-  
-        res.status(200).send(
-          jsend(200, {
-            user,
-          })
-        );
-      })
-      .catch((err) => {
-        res.status(404).send(
-          jsend(404, {
-            message: "User not found!",
-          })
-        );
-      });
-  };
+exports.getUserByUserName = (req, res,next) => {
+    User.findOne({name:req.params.name})
+        .exec((err,user) =>{
+            if(err){
+                next(err);
+            }
+            res.json(user);
+        })
+};
 
 exports.registerUser = (req, res, next) => {
-  UserModel.findOne({ userName: req.params.name})
+  User.findOne({ name: req.params.name})
     .then((user) => {
-      userExists = userExits(user.name);
+      let userExists = userExits(user.name);
 
       if(userExits) {
-        res.status(302).send(
-          jsend(302, {
-            message: "User found"
-          })
-        );
+          res.status(302);
       }
       else {
         const user = new User({
@@ -58,15 +39,13 @@ exports.registerUser = (req, res, next) => {
                 return err(next);
         });
   
-        res.status(200).send(
-          jsend(200)
-        );
+        res.status(200)
       }
     });
 }
 
 function userExits(username) {
-  UserModel.findOne({ userName: username })
+  User.findOne({ userName: username })
       .then((user) => {
         if (!user) {
           return true;
@@ -75,3 +54,14 @@ function userExits(username) {
         return false;
       });
 };
+
+exports.init_test = (req, res, next) => {
+    let u1 = new User({name:"alex", password:"Alexandre1"})
+    u1.save(err => {
+        if(err){
+            next(err);
+        }
+    });
+    res.send("Done")
+
+}
