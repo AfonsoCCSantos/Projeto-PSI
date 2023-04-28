@@ -13,14 +13,9 @@ header {
 
 .menuOption {
   width: 6%;
-  /*border-bottom: 2px solid;*/
-  /*border-image-slice: 2;*/
-  /*border-image-source: linear-gradient(to right, #009FFD, #42378F);*/
-  padding-bottom: 0.5% ;
   align-self: center;
   text-align: center;
 }
-
 
 .menuOption::after {
   content: "";
@@ -28,6 +23,8 @@ header {
   position: relative;
   margin-left: 0;
   border-bottom: solid 3px #019fb6;
+  border-image-slice: 2;
+  border-image-source: linear-gradient(to right, #009FFD, #42378F);
   transform: scale(0);
   transition: transform 250ms ease-in-out;
 }
@@ -36,3 +33,15 @@ header {
   transform: scaleX(1);
 }
 
+.menuOption:hover {
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  font-size: 1.3rem;
+}
+
+#user {
+  text-decoration: none;
+}

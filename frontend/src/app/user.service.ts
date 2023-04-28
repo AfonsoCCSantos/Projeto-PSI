@@ -9,12 +9,12 @@ import { map, tap } from 'rxjs/operators';
 })
 export class UserService {
 
-  private userUrl = "/user";
+  private userUrl = "api/user";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  
+
   constructor(private http: HttpClient) { }
 
   getUserByName(username: string): Observable<User> {
