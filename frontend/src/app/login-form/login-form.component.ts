@@ -29,7 +29,6 @@ export class LoginFormComponent {
     this.user_service.getUserByName(username).subscribe(u =>{
       user = u;
       if(!user){
-        console.log("username nao existe")
         this.login_failed = true
         let inputs = document.querySelectorAll(".textInput")
         inputs.forEach(i => i.classList.add("failed_login_input") )
