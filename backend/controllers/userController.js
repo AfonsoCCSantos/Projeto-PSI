@@ -32,13 +32,15 @@ exports.registerUser = (req, res, next) => {
           password: req.body.password,
         });
         user.save((err) => {    
-          if (err)
-              return err(next);
+          if (err) {
+            return next(err);
+          }
         });
         res.status(200)
       }
     });
 }
+
 
 exports.init_test = (req, res, next) => {
     let u1 = new User({name:"alex", password:"Alexandre1"})
