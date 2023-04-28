@@ -23,22 +23,18 @@ exports.getUserByUserName = (req, res,next) => {
 exports.registerUser = (req, res, next) => {
   User.findOne({ name: req.params.name})
     .then((user) => {
-      let userExists = userExits(user.name);
-
-      if(userExits) {
-          res.status(302);
+      if (user) {
+        res.status(302);
       }
       else {
         const user = new User({
           name: req.body.name,
           password: req.body.password,
         });
-  
         user.save((err) => {    
-            if (err)
-                return err(next);
+          if (err)
+              return err(next);
         });
-  
         res.status(200)
       }
     });
