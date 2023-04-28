@@ -21,16 +21,12 @@ exports.getUserByUserName = (req, res,next) => {
 };
 
 exports.registerUser = (req, res, next) => {
-  User.findOne({ userName: req.params.name})
+  User.findOne({ name: req.params.name})
     .then((user) => {
       let userExists = userExits(user.name);
 
       if(userExits) {
-        res.status(302).send(
-          jsend(302, {
-            message: "User found"
-          })
-        );
+          res.status(302);
       }
       else {
         const user = new User({
