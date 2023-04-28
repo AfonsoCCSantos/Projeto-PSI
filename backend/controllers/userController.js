@@ -40,17 +40,6 @@ exports.registerUser = (req, res, next) => {
     });
 }
 
-function userExits(username) {
-  User.findOne({ userName: username })
-      .then((user) => {
-        if (!user) {
-          return true;
-        }
-        
-        return false;
-      });
-};
-
 exports.init_test = (req, res, next) => {
     let u1 = new User({name:"alex", password:"Alexandre1"})
     u1.save(err => {
