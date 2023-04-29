@@ -7,12 +7,10 @@
             <ul class="profile-stats-list">
               <li>
                 <span class="profile-stat-count" *ngIf="user.followers_list"> {{user.followers_list.length}} </span>
-                <span class="profile-stat-count" *ngIf="!user.followers_list"> 0 </span>
                 Followers
               </li>
               <li>
                 <span class="profile-stat-count" *ngIf="user.following_list"> {{user.following_list.length}} </span>
-                <span class="profile-stat-count" *ngIf="!user.following_list"> 0 </span>
                 Following
               </li>
             </ul>
