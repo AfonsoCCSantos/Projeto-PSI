@@ -1,6 +1,8 @@
 <div id="search-component">
-    <img src="../../assets/lupa.png">
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="pesquisar"/>
+    <div id="search">
+        <img src="../../assets/lupa.png">
+        <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="pesquisar"/>
+    </div>
     <ul class="search-result" *ngIf="showList">
         <li *ngFor="let item of items$ | async" >
         <a routerLink="/detail/{{item._id}}">

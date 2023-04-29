@@ -13,7 +13,7 @@ input {
 li {
     list-style-type: none;
     background-color: white;
-    width: 95%;
+    width: 90%;
 }
 
 .search-result li a {
@@ -22,11 +22,12 @@ li {
     border-right: 1px solid gray;
     display: inline-block;
     width: 100%;
-    max-width: 9.5em;
+    max-width: 7em;
     padding: .5rem;
     box-sizing: border-box;
     text-decoration: none;
     color: black;
+    font-size: 1em;
 }
   
 .search-result li a:hover {
@@ -36,7 +37,7 @@ li {
   
 ul.search-result {
     margin-top: 0;
-    padding-left: 0.4em;
+    padding-left: 2.5em;
 }
 
 img {
@@ -45,7 +46,7 @@ img {
     margin-right: 0.4em;
 }
 
-#search-component {
+#search {
     display: flex;
     justify-content: flex-end;
     max-width: 10em;
