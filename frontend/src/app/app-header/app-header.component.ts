@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent {
-  user : String | undefined;
+  user : string | undefined;
 
   ngOnInit() {
     let logged_user = localStorage.getItem("user_name");

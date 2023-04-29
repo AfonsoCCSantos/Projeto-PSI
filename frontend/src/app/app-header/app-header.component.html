@@ -1,6 +1,6 @@
 <header>
   <div *ngIf=user id="userLog">
-    <a routerLink="/profile/{{user}}" id="user"> {{user}} Profile</a>
+    <a routerLink="/profile/{{user}}" id="user"> {{user | uppercase }} Profile</a>
     <a routerLink="/login" id="signOut" (click)="logOutUser()"> Sign Out </a>
   </div>
   <a *ngIf=!user routerLink="/login" id="login">Log In</a>
