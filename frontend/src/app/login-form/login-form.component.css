@@ -51,6 +51,10 @@ button:active{
   border-radius: 0.7em;
 }
 
+.textInput:focus{
+  outline: none;
+}
+
 a{
   color: #d2d2d2;
 }
@@ -63,7 +67,7 @@ label{
   margin-top: 0.5em;
 }
 
-label:hover{
+label:hover, input[type =checkbox]{
   cursor: pointer;
 }
 
