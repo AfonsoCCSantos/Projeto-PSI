@@ -6,8 +6,8 @@ export interface Item {
     languages: [string];
     price: number;
     classification: number;
-    comments: [String];
-    main_image: ArrayBuffer;
-    sec_image: [ArrayBuffer];
-    video_link: String;
+    comments: [string];
+    main_image: string;
+    sec_image: [string];
+    video_link: string;
 }
