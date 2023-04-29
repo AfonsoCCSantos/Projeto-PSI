@@ -1,11 +1,1 @@
-<header>
-  <a *ngIf=user routerLink="/profile/{{user}}" id="user">{{user}} Profile</a>
-  <a *ngIf=!user routerLink="/login" id="login">Log In</a>
-  <div class="menuOption">Library</div>
-  <div class="menuOption">Lists</div>
-  <div class="menuOption">Following</div>
-  <div class="menuOption">Followers</div>
-  <app-item-searchbar></app-item-searchbar>
-</header>
-
 <router-outlet></router-outlet>
