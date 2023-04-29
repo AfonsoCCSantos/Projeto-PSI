@@ -4,7 +4,7 @@
     <a routerLink="/login" id="signOut" (click)="logOutUser()"> Sign Out </a>
   </div>
   <a *ngIf=!user routerLink="/login" id="login">Log In</a>
-  <div class="menuOption">Library</div>
+  <div class="menuOption" routerLink="/library">Library</div>
   <div class="menuOption">Lists</div>
   <div class="menuOption" routerLink="/dashboard">Dashboard</div>
   <div class="menuOption">Following</div>
