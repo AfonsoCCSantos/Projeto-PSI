@@ -3,6 +3,9 @@ import { Observable, Subject } from 'rxjs';
 import { Item } from 'src/app/Item';
 import { ItemService } from '../item.service';
 
+import { HostListener } from '@angular/core';
+import { ElementRef } from '@angular/core';
+
 import {
     debounceTime, distinctUntilChanged, switchMap
   } from 'rxjs/operators';
@@ -16,8 +19,12 @@ export class ItemSearchbarComponent implements OnInit {
 
     items$!: Observable<Item[]>;
     private searchTerms = new Subject<string>();
+    showList: boolean = true;
 
-    constructor(private itemService : ItemService) {}
+    constructor(
+        private itemService : ItemService,
+        private elementRef : ElementRef
+        ) {}
 
     ngOnInit(): void {
         this.items$ = this.searchTerms.pipe(
@@ -29,5 +36,16 @@ export class ItemSearchbarComponent implements OnInit {
 
     search(term: string): void {
         this.searchTerms.next(term);
+    }
+
+    @HostListener('document:mousedown', ['$event'])
+    onGlobalClick(event: MouseEvent): void {
+        if (!this.elementRef.nativeElement.contains(event.target)) {
+            // clicked outside => close dropdown list
+            this.showList = false;
+        }
+        else {
+            this.showList = true;
+        }
     }
 }
