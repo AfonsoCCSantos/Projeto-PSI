@@ -44,10 +44,13 @@ header {
       "logOut";
 }
 
-#user {
+a {
   color: white;
-  text-decoration: none;
   font-size: 1.3rem;
+}
+
+#user {
+  text-decoration: none;
   grid-area: user;
 }
 
@@ -55,4 +58,6 @@ header {
   color: red;
   text-decoration: underline;
   grid-area: logOut;
+  font-size: 1rem;
 }
+

@@ -19,4 +19,12 @@ export class AppHeaderComponent {
       this.user = logged_user;
     }
   }
+
+  logOutUser() {
+    localStorage.removeItem("user_name");
+    sessionStorage.removeItem("user_name");
+  }
+
+
+
 }
