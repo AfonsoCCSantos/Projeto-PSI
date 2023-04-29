@@ -7,14 +7,13 @@ input {
     display: block;
     border-radius: 5em;
     font-size: 0.8em;
-}
-  
-input:focus {
-    outline: #336699 auto 1px;
+    border: 0;
 }
   
 li {
     list-style-type: none;
+    background-color: white;
+    width: 95%;
 }
 
 .search-result li a {
@@ -23,7 +22,7 @@ li {
     border-right: 1px solid gray;
     display: inline-block;
     width: 100%;
-    max-width: 600px;
+    max-width: 9.5em;
     padding: .5rem;
     box-sizing: border-box;
     text-decoration: none;
@@ -37,5 +36,5 @@ li {
   
 ul.search-result {
     margin-top: 0;
-    padding-left: 0;
+    padding-left: 0.4em;
 }

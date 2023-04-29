@@ -1,8 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../user';
 
 import { ValidatePasswordNumber, ValidatePasswordLowerCase, ValidatePasswordUpperCase } from '../validators/passwordValidator';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-registo',
@@ -11,13 +13,10 @@ import { ValidatePasswordNumber, ValidatePasswordLowerCase, ValidatePasswordUppe
 })
 export class RegistoComponent {
 
-  constructor(private router : Router) {}
-
-  // @ViewChild('passwordBox') passwordBox!: ElementRef;
   registrationSuccessful: boolean = false;
   registrationFailed: boolean = false;
-  errorMessages: string[] = [];
   alreadyTypingPassword: boolean = false;
+  usernameAlreadyTaken: boolean = false;
   
   registrationForm = new FormGroup({
     username: new FormControl('', [
@@ -34,14 +33,31 @@ export class RegistoComponent {
     ]),
   });
 
+  constructor(private router : Router, private userService : UserService) {}
+
   disablePasswordInformation() {
     this.alreadyTypingPassword = true;
+    this.usernameAlreadyTaken = false;
   }
 
   submit() {
     if (this.registrationForm.valid) {
-      this.registrationSuccessful = true;
-      this.registrationFailed = false;
+      let succeeded = false;
+      const newUser: User = {
+        _id: '',
+        name: this.username.value,
+        password: this.password.value,
+        image: new ArrayBuffer(0)
+      };
+      this.userService.registerUser(newUser).subscribe(result => {
+        if (result) {
+          this.registrationSuccessful = true;
+          this.registrationFailed = false;
+        }
+        else {
+          this.usernameAlreadyTaken = true;
+        }
+      });
     }
     else {
       this.registrationFailed = true;

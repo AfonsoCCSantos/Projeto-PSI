@@ -11,7 +11,7 @@ import { MessageService } from './message.service';
 })
 export class ItemService {
 
-  private itemsUrl = '/items';
+  private itemsUrl = '/api/items';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,9 +27,17 @@ export class ItemService {
       return of([]);
     }
 
-    return this.http.get<Item[]>(`${this.itemsUrl}/?name=${term}`).pipe(
+    return this.http.get<Item[]>(`${this.itemsUrl}/search/?name=${term}`).pipe(
       catchError(this.handleError<Item []>('searchItems', []))
       );
+  }
+
+  getItem(id: string): Observable<Item> {
+    const url = `${this.itemsUrl}/${id}`;
+    return this.http.get<Item>(url).pipe(
+      tap(_ => this.log(`fetched item id=${id}`)),
+      catchError(this.handleError<Item>(`getItem id=${id}`))
+    );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

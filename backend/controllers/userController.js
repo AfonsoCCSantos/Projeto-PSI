@@ -1,17 +1,57 @@
 const User = require("../models/user");
+const UserModel = require("../models/user");
+
+exports.getUser = (req, res) => {
+    const user = User.findOne({ userName: req.params.userName });
+    if(user == null){
+        res.json("User Doesnt exists");
+    } else {
+        res.json(user);
+    }
+}
 
 exports.getUserByUserName = (req, res,next) => {
-    User.find({name:req.params.name})
+    User.findOne({name:req.params.name})
         .exec((err,user) =>{
             if(err){
                 next(err);
             }
-            if(user == null || user.length == 0){
-                // No results.
-                const err = new Error("Hero not found");
-                err.status = 404;
-                return next(err);
+            if(user == null){
+                res.status(404);
             }
             res.json(user);
         })
-  };
+};
+
+exports.registerUser = (req, res, next) => {
+  User.findOne({ name: req.params.name})
+    .then((user) => {
+      if (user) {
+        res.status(304).json({ message: "User already exists" });
+      }
+      else {
+        const user = new User({
+          name: req.body.name,
+          password: req.body.password,
+        });
+        user.save((err) => {    
+          if (err) {
+            return next(err);
+          }
+        });
+        res.status(200).json({ message: "User registered successfully" });
+      }
+    });
+}
+
+
+exports.init_test = (req, res, next) => {
+    let u1 = new User({name:"alex", password:"Alexandre1"})
+    u1.save(err => {
+        if(err){
+            next(err);
+        }
+    });
+    res.send("Done")
+
+}
