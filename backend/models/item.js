@@ -11,8 +11,8 @@ const ItemSchema = new Schema({
     price : {type : Number, require : true},
     classification : {type : Number, require : true},
     comments : {type : [String]},
-    main_image : {type : Buffer, require : true},
-    sec_images : {type : [Buffer]},
+    main_image : {type : String, require : true},
+    sec_images : {type : [String]},
     video_link : {type : String}
 
 

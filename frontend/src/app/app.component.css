@@ -1,0 +1,47 @@
+header {
+  height: 3%;
+  padding: 2%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid 3px;
+  background-color: #1b2323;
+  border-image-slice: 2;
+  border-image-source: linear-gradient(to right, #009FFD, #42378F);
+  position: sticky;
+  color: white;
+}
+
+.menuOption {
+  width: 6%;
+  align-self: center;
+  text-align: center;
+}
+
+.menuOption::after {
+  content: "";
+  display: block;
+  position: relative;
+  margin-left: 0;
+  border-bottom: solid 3px #019fb6;
+  border-image-slice: 2;
+  border-image-source: linear-gradient(to right, #009FFD, #42378F);
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.menuOption:hover::after {
+  transform: scaleX(1);
+}
+
+.menuOption:hover {
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  font-size: 1.3rem;
+}
+
+#user {
+  text-decoration: none;
+}

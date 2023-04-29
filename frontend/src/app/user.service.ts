@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { User } from './user';
 import { map, tap } from 'rxjs/operators';
+import {catchError} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class UserService {
 
   getUserByName(username: string): Observable<User> {
     const url = `${this.userUrl}/${username}`;
-    return this.http.get<User>(url);
+    return this.http.get<User>(url)
+      .pipe(catchError( this.handleError<User>("Get user by name",undefined)));
   }
   
   registerUser(user: User): Observable<boolean> {
@@ -33,4 +35,13 @@ export class UserService {
       })
     );
   }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error); // log to console instead
+      return of(result as T);
+    };
+  }
+
+
 }
