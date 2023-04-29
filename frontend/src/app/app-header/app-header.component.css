@@ -37,15 +37,22 @@ header {
   cursor: pointer;
 }
 
-a {
-  color: white;
-  font-size: 1.3rem;
+#userLog {
+  display: grid;
+  grid-template-areas:
+      "user"
+      "logOut";
 }
 
 #user {
+  color: white;
   text-decoration: none;
+  font-size: 1.3rem;
+  grid-area: user;
 }
 
-button {
-  background-color: red;
+#signOut {
+  color: red;
+  text-decoration: underline;
+  grid-area: logOut;
 }

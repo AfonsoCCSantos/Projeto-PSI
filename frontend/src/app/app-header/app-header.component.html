@@ -1,7 +1,7 @@
 <header>
-  <div *ngIf=user>
-    <a routerLink="/profile/{{user}}" id="user">{{user}} Profile</a>
-    <button>Sign Out</button>
+  <div *ngIf=user id="userLog">
+    <a routerLink="/profile/{{user}}" id="user"> {{user}} Profile</a>
+    <a id="signOut"> Sign Out </a>
   </div>
     <a *ngIf=!user routerLink="/login" id="login">Log In</a>
   <div class="menuOption">Library</div>
