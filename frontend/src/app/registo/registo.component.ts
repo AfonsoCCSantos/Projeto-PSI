@@ -17,7 +17,7 @@ export class RegistoComponent {
   registrationFailed: boolean = false;
   alreadyTypingPassword: boolean = false;
   usernameAlreadyTaken: boolean = false;
-  
+
   registrationForm = new FormGroup({
     username: new FormControl('', [
       Validators.required,
@@ -47,7 +47,7 @@ export class RegistoComponent {
         _id: '',
         name: this.username.value,
         password: this.password.value,
-        image: new ArrayBuffer(0)
+        image: 'https://cdn-icons-png.flaticon.com/512/1250/1250689.png'
       };
       this.userService.registerUser(newUser).subscribe(result => {
         if (result) {

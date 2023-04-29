@@ -4,7 +4,7 @@ export interface User {
     _id: string;
     name: string;
     password: string;
-    image: ArrayBuffer;
+    image: string;
     item_library?: [Item];
     wish_items?: [Item];
     followers_list?: [User];
