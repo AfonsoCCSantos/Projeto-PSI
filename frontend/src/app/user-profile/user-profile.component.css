@@ -3,7 +3,6 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 50px 50px 20px;
-
   color: white;
   justify-content: space-between;
 
@@ -66,12 +65,23 @@ ul:not(.profile-stats-list) {
 }
 
 
+
 .library{
   margin-left: 20px;
   margin-right: 20px;
   display: flex;
   flex-direction: column;
   text-align: left;
+  height: 550px;
+  justify-content: space-between;
+}
+
+.library h2{
+  margin-top: 0;
+}
+
+.wishlist h2{
+  margin-top: 0 ;
 }
 
 .library li {
@@ -93,7 +103,8 @@ ul:not(.profile-stats-list) {
   display: flex;
   flex-direction: column;
   text-align: left;
-  max-width: fit-content;
+  height: 550px;
+  justify-content: space-between;
 }
 
 .wishlist li {
@@ -127,18 +138,22 @@ button:hover {
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
+  border-radius: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  border-radius: 5px;
+
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1a65f1;
+  background-image: linear-gradient(to right, #009FFD, #42378F);;
+  border-radius: 5px;
 }
 
-/* Handle on hover */
+
 

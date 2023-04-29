@@ -1,85 +1,49 @@
-    <app-dashboard></app-dashboard>
-    <div class="profile">
 
+    <div class="profile" *ngIf="user">
       <div class = "profile-info">
-        <img class="profile-image" src="../../assets/images/white_profile.png" alt="Foto de perfil">
-        <h2>Diogo Profile</h2>
+        <img class="profile-image" src="{{user.image}}" alt="Profile Picture">
+        <h2>{{user.name | uppercase}} Profile</h2>
         <div class="profile-stats">
             <ul class="profile-stats-list">
               <li>
-                <span class="profile-stat-count"> 188 </span> Followers
+                <span class="profile-stat-count" *ngIf="user.followers_list"> {{user.followers_list.length}} </span>
+                <span class="profile-stat-count" *ngIf="!user.followers_list"> 0 </span>
+                Followers
               </li>
               <li>
-                <span class="profile-stat-count"> 188 </span> Following
+                <span class="profile-stat-count" *ngIf="user.following_list"> {{user.following_list.length}} </span>
+                <span class="profile-stat-count" *ngIf="!user.following_list"> 0 </span>
+                Following
               </li>
             </ul>
         </div>
-        <button type="button"> My Lists </button>
+        <button type="button"> {{user.name | uppercase}} Custom Lists  </button>
       </div>
 
       <div class="library">
-        <h2> Library Preview </h2>
-        <ul class="library-items">
-          <li>
-              <img src="../../assets/images/mine.png" class="item_image">
-              <p> Minecraft</p>
+        <h2> Library </h2>
+        <ul class="library-items" *ngIf="user.item_library && user.item_library.length > 0">
+          <li *ngFor="let item of user.item_library">
+            <img src="{{item.main_image}}" class="item_image" alt="{{item.name}} Photo">
+            <p> {{item.name}}</p>
           </li>
-
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
-          </li>
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
-          </li>
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
-          </li>
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
-          </li>
-
-
-
-
         </ul>
+
+        <p *ngIf="user.item_library && user.item_library.length < 1" class = "empty_list"> Empty Library </p>
         <button type="button"> Open Library </button>
       </div>
 
 
       <div class="wishlist">
-        <h2> Wishlist Preview </h2>
-        <ul class="wishlist-items">
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
+        <h2 > Wishlist  </h2>
+        <ul class="wishlist-items" *ngIf="user.wish_items && user.wish_items.length > 0">
+          <li *ngFor="let item of user.wish_items">
+            <img src="{{item.main_image}}" class="item_image" alt="{{item.name}} Photo">
+            <p> {{item.name}}</p>
           </li>
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
-          </li>
-          <li>
-            <img src="../../assets/images/mine.png" class="item_image">
-            <p> Minecraft</p>
-          </li>
-
-
         </ul>
+        <p *ngIf="user.wish_items && user.wish_items.length < 1"> Empty Wishlist </p>
         <button type="button"> Open Wishlist </button>
-
       </div>
-
-
-<!--      <div class="buttons">
-        <button type="button"> Library </button>
-        <button type="button"> Wishlists </button>
-        <button type="button"> Diogo Costume Lists </button>
-        <button type="button"> Following </button>
-        <button type="button"> Followers </button>
-      </div>-->
-
     </div>
 
