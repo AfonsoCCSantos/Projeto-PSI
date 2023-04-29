@@ -33,6 +33,7 @@ exports.registerUser = (req, res, next) => {
         const user = new User({
           name: req.body.name,
           password: req.body.password,
+          image: req.body.image,
         });
         user.save((err) => {    
           if (err) {
