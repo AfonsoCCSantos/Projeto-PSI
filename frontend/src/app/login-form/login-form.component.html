@@ -12,9 +12,16 @@
     <label for="password">Password </label>
     <input class="textInput" id="password" type="password" formControlName="password">
 
+    <div id="rememberMeContainer">
+      <label for="rememberMe">Remember me</label>
+      <input id="rememberMe" type="checkbox">
+    </div>
+
+
     <button id="login_btn" (click)="login()">
       Login
     </button>
+    <div *ngIf="login_failed" id="failed_login_msg">Wrong Username/Password</div>
   </form>
 
 

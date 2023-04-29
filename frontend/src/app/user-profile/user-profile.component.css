@@ -1,0 +1,149 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  padding: 2% 2% 1%;
+  color: white;
+  justify-content: space-between;
+  width: auto;
+  height: 80%;
+}
+
+.profile-info{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.profile-image {
+  width: 16em;
+  height: 15em;
+  border-radius: 3.125em;
+  border: 0.250em solid black;
+  /*filter: drop-shadow(0 0 0px #459BBF);*/
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul:not(.profile-stats-list) {
+  overflow-y: auto;
+  width: 18.75em;
+  height: 25em;
+  max-width: 25em;
+  max-height: 25em;
+}
+
+.profile-stats li {
+  display: inline-block;
+  font-size: 1.25em;
+  margin-right: 1.25em;
+  cursor: pointer;
+}
+
+.profile-info button{
+  padding: 0.625em 1.25em;
+  margin-top: 1.25em;
+  border: none;
+  border-radius: 0.25em;
+  background-color: #1a65f1;
+  color: inherit;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  width: 16.875em;
+}
+.profile-info button:hover {
+  background-color: #2a77f6;
+  cursor: pointer;
+}
+
+.library{
+  margin-left: 1.25em;
+  margin-right: 1.25em;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.library h2{
+  margin-top: 0;
+}
+
+.wishlist h2{
+  margin-top: 0 ;
+}
+
+.library li {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  margin-top: 0.625em;
+}
+
+.item_image {
+  width: 6.25em;
+  height: 6.25em;
+  margin-right: 0.625em;
+}
+
+.wishlist{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.wishlist li {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  margin-top: 0.625em;;
+}
+
+ul li:nth-child(n+6) {
+  display: none;
+}
+
+button {
+  padding: 0.625em 1.25em;
+  margin-top: 1.25em;
+  border: none;
+  border-radius: 0.25em;
+  background-color: #1a65f1;
+  color: inherit;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  width: 18.75em;
+
+}
+
+button:hover {
+  background-color: #2a77f6;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.625em;
+  border-radius: 0.3125em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.3125em;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right, #009FFD, #42378F);;
+  border-radius: 0.3125em;
+}
+
+
+

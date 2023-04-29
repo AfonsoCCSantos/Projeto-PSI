@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { use } = require("../routes/users");
 
 const Schema = mongoose.Schema;
 
@@ -54,7 +53,6 @@ const UserSchema = new Schema({
   wish_items: { type: [Schema.Types.ObjectId, ref = "Item" ]},
   followers_list: { type: [Schema.Types.ObjectId, ref = "User" ]},
   following_list: { type: [Schema.Types.ObjectId, ref = "User" ]}
-
 });
 
 module.exports = mongoose.model("User", UserSchema);

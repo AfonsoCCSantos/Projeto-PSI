@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 })
 export class LoginFormComponent {
 
+  login_failed = false;
   constructor(private user_service : UserService,private router: Router) {
   }
 
@@ -27,17 +28,34 @@ export class LoginFormComponent {
     let user! : User;
     this.user_service.getUserByName(username).subscribe(u =>{
       user = u;
+      if(!user){
+        this.login_failed = true
+        let inputs = document.querySelectorAll(".textInput")
+        inputs.forEach(i => i.classList.add("failed_login_input") )
+        return;
+      }
+
+      //Login sucess
+      if(user.password == password){
+        let rememberUserCheckBox =<HTMLInputElement> document.getElementById("rememberMe");
+
+        if(rememberUserCheckBox.checked){
+          localStorage.setItem("user_name",user.name);
+        }
+        else{
+          sessionStorage.setItem("user_name",user.name);
+        }
+        this.router.navigate(["dashboard"]);
+      }
+      else{
+        this.login_failed = true
+        let inputs = document.querySelectorAll(".textInput")
+        inputs.forEach(i => i.classList.add("failed_login_input") )
+
+      }
     });
 
-    if(!user){
 
-    }
-
-    if(user.password == password){
-      localStorage.removeItem("user_name");// This makes the user log in always, removing this and add to log out??
-      localStorage.setItem("user_name",user.user_name);
-      this.router.navigate(["dashboard"]);
-    }
   }
 
 }
