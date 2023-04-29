@@ -38,13 +38,21 @@ button{
 }
 
 button:hover{
-  background-color: #2a77f6;
+  background-image: linear-gradient(to left, #1a65f1 0%, #5c99ff 100%);
   cursor: pointer;
+}
+
+button:active{
+  background-image: linear-gradient(to left, #1a65f1 0%, #5c99ff 51%);
 }
 
 .textInput{
   padding: 0.7em;
   border-radius: 0.7em;
+}
+
+.textInput:focus{
+  outline: none;
 }
 
 a{
@@ -59,6 +67,10 @@ label{
   margin-top: 0.5em;
 }
 
+label:hover, input[type =checkbox]{
+  cursor: pointer;
+}
+
 #failed_login_msg{
   color: #e73131;
   text-align: center;
@@ -66,4 +78,8 @@ label{
 
 .failed_login_input{
   border: 0.2em solid #e73131 ;
+}
+
+#rememberMeContainer{
+  margin: 0.5em 0;
 }

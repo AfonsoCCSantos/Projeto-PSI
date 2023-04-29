@@ -35,9 +35,16 @@ export class LoginFormComponent {
         return;
       }
 
+      //Login sucess
       if(user.password == password){
-        localStorage.removeItem("user_name");// This makes the user log in always, removing this and add to log out??
-        localStorage.setItem("user_name",user.name);
+        let rememberUserCheckBox =<HTMLInputElement> document.getElementById("rememberMe");
+
+        if(rememberUserCheckBox.checked){
+          localStorage.setItem("user_name",user.name);
+        }
+        else{
+          sessionStorage.setItem("user_name",user.name);
+        }
         this.router.navigate(["dashboard"]);
       }
       else{
