@@ -25,6 +25,14 @@ label{
   padding: 0.7em;
 }
 
+a{
+  color: #d2d2d2;
+}
+
+a:hover{
+  color: white;
+}
+
 p {
   text-align: center;
 }
@@ -37,26 +45,28 @@ h1{
   justify-self: flex-start;
 }
 
-button:hover{
-  background-color: #2a77f6;
-  cursor: pointer;
+#buttons {
+  text-align: center;
 }
 
-button {
-  font-weight: bold;
-  font-size: 1em;
-  border:none;
-  color:inherit;
+button{
+  color: inherit;
   background-color: #1a65f1;
-  display: inline-block;
-  margin:auto;
-  width: 40%;
-  margin-top: 1em;
+  font-weight: bold;
+  border: none;
+  font-size: 1em;
+  width: 70%;
+  margin: 1em auto;
   padding: 0.8em;
 }
 
-.submitButton {
-  margin-right: 7%;
+button:hover{
+  background-image: linear-gradient(to left, #1a65f1 0%, #5c99ff 100%);
+  cursor: pointer;
+}
+
+button:active{
+  background-image: linear-gradient(to left, #1a65f1 0%, #5c99ff 51%);
 }
 
 #password {
@@ -65,14 +75,6 @@ button {
 
 .errorMessage {
   color: red;
-}
-
-.goToLoginButton {
-  margin-left: 7%;
-}
-
-#buttons {
-  text-align: center;
 }
 
 ul {
