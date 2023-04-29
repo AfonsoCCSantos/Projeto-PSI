@@ -1,4 +1,5 @@
 <div id="search-component">
+    <img src="../../assets/lupa.png">
     <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="pesquisa"/>
     <ul class="search-result" *ngIf="showList">
         <li *ngFor="let item of items$ | async" >
