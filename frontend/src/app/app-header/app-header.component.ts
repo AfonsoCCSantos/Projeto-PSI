@@ -10,6 +10,13 @@ export class AppHeaderComponent {
 
   ngOnInit() {
     let logged_user = localStorage.getItem("user_name");
-    if (logged_user) this.user = logged_user;
+    if (logged_user){
+      this.user = logged_user;
+      return;
+    }
+    logged_user = sessionStorage.getItem("user_name");
+    if (logged_user) {
+      this.user = logged_user;
+    }
   }
 }
