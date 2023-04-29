@@ -4,8 +4,8 @@
   <p>Everyone is playing:</p>
 
   <div>
-    <ul>
-      <li *ngFor="let game of games">
+    <ul *ngIf=games>
+      <li *ngFor="let game of games.slice(0,3)">
         <img src="{{game.main_image}}" alt="{{game.name}} Photo">
       </li>
     </ul>
