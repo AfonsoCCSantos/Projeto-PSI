@@ -49,14 +49,15 @@ export class RegistoComponent {
         password: this.password.value,
         image: new ArrayBuffer(0)
       };
-      this.userService.registerUser(newUser).subscribe(result => succeeded = result);
-      if (succeeded) {
-        this.registrationSuccessful = true;
-        this.registrationFailed = false;
-      }
-      else {
-        this.usernameAlreadyTaken = true;
-      }
+      this.userService.registerUser(newUser).subscribe(result => {
+        if (result) {
+          this.registrationSuccessful = true;
+          this.registrationFailed = false;
+        }
+        else {
+          this.usernameAlreadyTaken = true;
+        }
+      });
     }
     else {
       this.registrationFailed = true;

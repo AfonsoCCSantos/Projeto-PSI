@@ -16,7 +16,6 @@ export class UserService {
   };
 
   constructor(private http: HttpClient) { }
-  
 
   getUserByName(username: string): Observable<User> {
     const url = `${this.userUrl}/${username}`;
@@ -25,11 +24,11 @@ export class UserService {
   
   registerUser(user: User): Observable<boolean> {
     const url = `${this.userUrl}/register`;
-    return this.http.post<HttpResponse<any>>(url, user, this.httpOptions).pipe(
-      map((response : HttpResponse<any>) => {
+    return this.http.post(url, user, { observe: 'response' }).pipe(
+      map((response: HttpResponse<any>) => {
         return response.status === 200;
       }),
-      catchError(() => {
+      catchError((err) => {
         return of(false);
       })
     );

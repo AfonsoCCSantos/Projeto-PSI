@@ -6,7 +6,7 @@ exports.getUser = (req, res) => {
     if(user == null){
         res.json("User Doesnt exists");
     } else {
-            res.json(user);
+        res.json(user);
     }
 }
 
@@ -24,7 +24,7 @@ exports.registerUser = (req, res, next) => {
   User.findOne({ name: req.params.name})
     .then((user) => {
       if (user) {
-        res.status(302);
+        res.status(304).json({ message: "User already exists" });
       }
       else {
         const user = new User({
@@ -36,7 +36,7 @@ exports.registerUser = (req, res, next) => {
             return next(err);
           }
         });
-        res.status(200)
+        res.status(200).json({ message: "User registered successfully" });
       }
     });
 }
