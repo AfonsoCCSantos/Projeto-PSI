@@ -1,4 +1,13 @@
 <app-app-header></app-app-header>
 
 <main>
+  <p>Everyone is playing:</p>
+
+  <div>
+    <ul>
+      <li *ngFor="let game of games">
+        <img src="{{game.main_image}}" alt="{{game.name}} Photo">
+      </li>
+    </ul>
+  </div>
 </main>
