@@ -33,7 +33,8 @@
         </p>
         <div id="buttons">
             <button *ngIf="!registrationSuccessful" class="submitButton" (click)="submit()">Register</button>
+            <button *ngIf="registrationSuccessful" (click)="goToLogin()">Go to Login</button>
         </div>
     </form>
-    <p> Already have an account? <a routerLink="/login" >Login</a></p>
+    <p *ngIf="!registrationSuccessful"> Already have an account? <a routerLink="/login" >Login</a></p>
 </div>
