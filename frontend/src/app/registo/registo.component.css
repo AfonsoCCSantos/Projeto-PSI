@@ -9,9 +9,25 @@
   background-color: #1b2323;
 }
 
+#formArea {
+  width: 30%;
+}
+
+#registerCompleted p {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+#registerCompleted {
+  width: 30%;
+  background-color: #414a4c;
+  text-align: center;
+  height: 30%;
+}
+
 form{
   background-color: #414a4c;
-  width: 30%;
+  width: 100%;
   padding: 1em;
   display: flex;
   flex-direction: column;
