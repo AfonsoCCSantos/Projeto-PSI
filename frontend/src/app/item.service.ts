@@ -40,6 +40,13 @@ export class ItemService {
     );
   }
 
+  getItems(): Observable<Item[]> {
+    return this.http.get<Item[]>(this.itemsUrl).pipe(
+      tap(_ => this.log(`fetched items`)),
+      catchError(this.handleError<Item[]>(`getItems`))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
