@@ -37,15 +37,13 @@ export class LoginFormComponent {
 
       //Login sucess
       if(user.password == password){
-        localStorage.removeItem("user_name");
-        sessionStorage.removeItem("user_name")
         let rememberUserCheckBox =<HTMLInputElement> document.getElementById("rememberMe");
 
         if(rememberUserCheckBox.checked){
           localStorage.setItem("user_name",user.name);
         }
         else{
-          sessionStorage.setItem("username",user.name);
+          sessionStorage.setItem("user_name",user.name);
         }
         this.router.navigate(["dashboard"]);
       }
