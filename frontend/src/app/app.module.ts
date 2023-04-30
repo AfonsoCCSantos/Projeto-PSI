@@ -16,6 +16,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { LibraryComponent } from './library/library.component';
 import { ListsComponent } from './lists/lists.component';
 import { FollowersComponent } from './followers/followers.component';
+import { FollowingComponent } from './following/following.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { FollowersComponent } from './followers/followers.component';
     LibraryComponent,
     ListsComponent,
     FollowersComponent,
+    FollowingComponent,
   ],
   imports: [
     BrowserModule,
