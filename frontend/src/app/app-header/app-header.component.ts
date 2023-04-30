@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-header.component.css']
 })
 export class AppHeaderComponent {
-  user : String | undefined;
+  user : string | undefined;
 
   ngOnInit() {
     let logged_user = localStorage.getItem("user_name");
@@ -19,4 +19,12 @@ export class AppHeaderComponent {
       this.user = logged_user;
     }
   }
+
+  logOutUser() {
+    localStorage.removeItem("user_name");
+    sessionStorage.removeItem("user_name");
+  }
+
+
+
 }

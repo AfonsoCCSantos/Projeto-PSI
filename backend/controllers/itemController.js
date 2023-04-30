@@ -7,6 +7,13 @@ exports.items_search_list = (req, res, next) => {
     });
 };
 
+exports.items_list = (req, res, next) => {
+    Item.find().exec(function (err, list_items) {
+        if (err) return next(err);
+        res.send(list_items);
+    });
+};
+
 exports.add_item = (req, res, next) => {
 
     const item = new Item({

@@ -1,39 +1,42 @@
 <div id="loginBox">
-    <h1>Create an account!</h1>
-    <form [formGroup]="registrationForm">
-        <h2>Registration</h2>
-        <label for="username">Username: </label>
-        <input class="textInput" id="username" type="text" formControlName="username" (click)="this.registrationFailed = false">
-        <div class="errorMessage" *ngIf="this.username.hasError('required') && (this.username.touched || this.username.dirty)">An username is required</div>
-        <div class="errorMessage" *ngIf="this.username.hasError('minlength') && (this.username.touched || this.username.dirty)">An username has to be at least 3 characters long</div>
-        <div class="errorMessage" *ngIf="this.username.hasError('pattern') && (this.username.touched || this.username.dirty)">An username can only contain alphanumeric characters</div>
-
-        <label for="password">Password: </label>
-        <input class="textInput" id="password" type="password" formControlName="password" (click)="this.registrationFailed = false" (click)="disablePasswordInformation()" (keydown.tab)="disablePasswordInformation()">
-        <div class="errorMessage" *ngIf="this.password.hasError('required') && (this.password.touched || this.password.dirty)">A password is required</div>
-        <div class="errorMessage" *ngIf="this.password.hasError('minlength') && (this.password.touched || this.password.dirty)">A passowrd has to be at least 8 characters long</div>
-        <div class="errorMessage" *ngIf="this.password.hasError('noUpperCase') && (this.password.touched || this.password.dirty)">A password must contain an upper case letter</div>
-        <div class="errorMessage" *ngIf="this.password.hasError('noLowerCase') && (this.password.touched || this.password.dirty)">A password must contain a lower case letter</div>
-        <div class="errorMessage" *ngIf="this.password.hasError('noNumber') && (this.password.touched || this.password.dirty)">A password must contain a number</div>
-
-        <ul *ngIf="!registrationSuccessful && !alreadyTypingPassword">
-            <li>At least 8 characters</li>
-            <li>An uppercase letter</li>
-            <li>A lowercase letter</li>
-            <li>A number</li>
-        </ul>
-        <p *ngIf="registrationSuccessful">
-            Account created! You can now login.
-        </p>
-        <p *ngIf="registrationFailed">
-            Registration failed. Please check the requirements and try again.
-        </p>
-        <p *ngIf="usernameAlreadyTaken" class="errorMessage">
-            This username has already been taken. Please register with a different username.
-        </p>
-        <div id="buttons">
-            <button *ngIf="!registrationSuccessful" class="submitButton" (click)="submit()">Register</button>
-            <button [class.goToLoginButton]="!registrationSuccessful" [class.soleButton]="registrationSuccessful" (click)="goToLogin()">Go to Login</button>
-        </div>
-    </form>
+    <h1 *ngIf="!registrationSuccessful">Create an account!</h1>
+    <div *ngIf="!registrationSuccessful" id="formArea">
+        <form [formGroup]="registrationForm">
+            <h2>Registration</h2>
+            <label for="username">Username: </label>
+            <input class="textInput" id="username" type="text" formControlName="username" (ngModelChange)="this.registrationFailed = false">
+            <div class="errorMessage" *ngIf="this.username.hasError('required') && (this.username.touched || this.username.dirty)">An username is required</div>
+            <div class="errorMessage" *ngIf="this.username.hasError('minlength') && (this.username.touched || this.username.dirty)">An username has to be at least 3 characters long</div>
+            <div class="errorMessage" *ngIf="this.username.hasError('pattern') && (this.username.touched || this.username.dirty)">An username can only contain alphanumeric characters</div>
+    
+            <label for="password">Password: </label>
+            <input class="textInput" id="password" type="password" formControlName="password" (ngModelChange)="this.registrationFailed = false" (ngModelChange)="disablePasswordInformation()" (click)="disablePasswordInformation()" (focus)="disablePasswordInformation()">
+            <div class="errorMessage" *ngIf="this.password.hasError('required') && (this.password.touched || this.password.dirty)">A password is required</div>
+            <div class="errorMessage" *ngIf="this.password.hasError('minlength') && (this.password.touched || this.password.dirty)">A passowrd has to be at least 8 characters long</div>
+            <div class="errorMessage" *ngIf="this.password.hasError('noUpperCase') && (this.password.touched || this.password.dirty)">A password must contain an upper case letter</div>
+            <div class="errorMessage" *ngIf="this.password.hasError('noLowerCase') && (this.password.touched || this.password.dirty)">A password must contain a lower case letter</div>
+            <div class="errorMessage" *ngIf="this.password.hasError('noNumber') && (this.password.touched || this.password.dirty)">A password must contain a number</div>
+    
+            <ul *ngIf="!registrationSuccessful && !alreadyTypingPassword">
+                <li>At least 8 characters</li>
+                <li>An uppercase letter</li>
+                <li>A lowercase letter</li>
+                <li>A number</li>
+            </ul>
+            <p *ngIf="registrationFailed">
+                Registration failed. Please check the requirements and try again.
+            </p>
+            <p *ngIf="usernameAlreadyTaken" class="errorMessage">
+                This username has already been taken. Please register with a different username.
+            </p>
+            <div id="buttons">
+                <button *ngIf="!registrationSuccessful" class="submitButton" (click)="submit()">Register</button>
+            </div>
+        </form>
+    </div>
+    <div id="registerCompleted" *ngIf="registrationSuccessful">
+        <p>Account created! You can now login.</p>
+        <button id="loginButton" (click)="goToLogin()">Go to Login</button>
+    </div>
+    <p *ngIf="!registrationSuccessful"> Already have an account? <a routerLink="/login" >Login</a></p>
 </div>

@@ -24,8 +24,8 @@ exports.getUserByUserName = (req, res,next) => {
 };
 
 exports.registerUser = (req, res, next) => {
-  User.findOne({ name: req.params.name})
-    .then((user) => {
+  User.findOne({ name: req.body.name})
+    .exec((err, user) => {
       if (user) {
         res.status(304).json({ message: "User already exists" });
       }

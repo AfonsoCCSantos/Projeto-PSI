@@ -20,6 +20,12 @@ export class LoginFormComponent {
     password: new FormControl('',[Validators.required]),
   });
 
+  ngOnInit(){
+    if(localStorage.getItem("user_name" ) || sessionStorage.getItem("user_name")){
+      this.router.navigate(["dashboard"]);
+    }
+  }
+
   login(){
     if(!this.loginForm.valid) console.log("empty fields")
 

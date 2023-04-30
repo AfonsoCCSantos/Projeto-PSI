@@ -1,12 +1,13 @@
 <header>
-  <div *ngIf=user>
-    <a routerLink="/profile/{{user}}" id="user">{{user}} Profile</a>
-    <button>Sign Out</button>
+  <div *ngIf=user id="userLog">
+    <a routerLink="/profile/{{user}}" id="user"> {{user | uppercase }} Profile</a>
+    <a routerLink="/login" id="signOut" (click)="logOutUser()"> Sign Out </a>
   </div>
-    <a *ngIf=!user routerLink="/login" id="login">Log In</a>
-  <div class="menuOption">Library</div>
-  <div class="menuOption">Lists</div>
-  <div class="menuOption">Following</div>
-  <div class="menuOption">Followers</div>
+  <a *ngIf=!user routerLink="/login" id="login">Log In</a>
+  <div class="menuOption" routerLink="/library">Library</div>
+  <div class="menuOption" routerLink="/lists">Lists</div>
+  <div class="menuOption" routerLink="/dashboard">Dashboard</div>
+  <div class="menuOption" routerLink="/following">Following</div>
+  <div class="menuOption" routerLink="/followers">Followers</div>
   <app-item-searchbar></app-item-searchbar>
 </header>
