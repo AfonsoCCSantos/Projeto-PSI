@@ -145,5 +145,14 @@ button:hover {
   border-radius: 0.3125em;
 }
 
+.user-not-found {
+  display: flex;
+  flex-direction: row;
+  padding: 2% 2% 1%;
+  color: white;
+  justify-content: center;
+  width: auto;
+  height: 80%;
+}
 
 
