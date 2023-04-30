@@ -5,17 +5,17 @@
         <h2>{{user.name | uppercase}} Profile</h2>
         <div class="profile-stats">
             <ul class="profile-stats-list">
-              <li>
-                <span class="profile-stat-count" *ngIf="user.followers_list"> {{user.followers_list.length}} </span>
+              <li routerLink="/followers">
+                <span class="profile-stat-count"   *ngIf="user.followers_list"> {{user.followers_list.length}} </span>
                 Followers
               </li>
-              <li>
-                <span class="profile-stat-count" *ngIf="user.following_list"> {{user.following_list.length}} </span>
+              <li routerLink="/following">
+                <span class="profile-stat-count"  *ngIf="user.following_list"> {{user.following_list.length}} </span>
                 Following
               </li>
             </ul>
         </div>
-        <button type="button"> {{user.name | uppercase}} Custom Lists  </button>
+        <button type="button" routerLink="/CostumeLists"> {{user.name | uppercase}} Custom Lists  </button>
       </div>
 
       <div class="library">
@@ -28,7 +28,7 @@
         </ul>
 
         <p *ngIf="user.item_library && user.item_library.length < 1" class = "empty_list"> Empty Library </p>
-        <button type="button"> Open Library </button>
+        <button type="button" routerLink="/library"> Open Library </button>
       </div>
 
 
@@ -41,7 +41,7 @@
           </li>
         </ul>
         <p *ngIf="user.wish_items && user.wish_items.length < 1"> Empty Wishlist </p>
-        <button type="button"> Open Wishlist </button>
+        <button type="button" routerLink="/wishlist"> Open Wishlist </button>
       </div>
     </div>
 
