@@ -21,14 +21,13 @@ export class AppHeaderComponent {
     if (logged_user) {
       this.user = logged_user;
     }
+  }
 
-    localStorage.setItem('currentRouter', this.router.url);
-    console.log(localStorage.getItem("currentRouter"));
-
+  ngAfterViewInit() {
     const elements = this.el.nativeElement.querySelectorAll('[routerLink]');
 
     for (const element of elements) {
-      if (this.router.url == element.getAttribute('routerLink'))
+      if (this.router.url === element.getAttribute('routerLink'))
         this.renderer.addClass(element, 'selected');
     }
   }
