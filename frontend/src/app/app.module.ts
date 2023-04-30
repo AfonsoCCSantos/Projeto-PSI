@@ -14,6 +14,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { LibraryComponent } from './library/library.component';
+import { ListsComponent } from './lists/lists.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { LibraryComponent } from './library/library.component';
     ItemDetailsComponent,
     AppHeaderComponent,
     LibraryComponent,
+    ListsComponent,
   ],
   imports: [
     BrowserModule,
