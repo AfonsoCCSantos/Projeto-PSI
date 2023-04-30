@@ -42,7 +42,6 @@ export class RegistoComponent {
 
   submit() {
     if (this.registrationForm.valid) {
-      let succeeded = false;
       const newUser: User = {
         _id: '',
         name: this.username.value,
