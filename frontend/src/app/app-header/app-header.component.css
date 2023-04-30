@@ -46,12 +46,12 @@ header {
 
 a {
   color: white;
-  font-size: 1.3rem;
+  text-decoration: none;
 }
 
 #user {
-  text-decoration: none;
   grid-area: user;
+  font-size: 1.3rem;
 }
 
 #signOut {

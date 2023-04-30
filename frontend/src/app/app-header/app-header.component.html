@@ -4,10 +4,10 @@
     <a routerLink="/login" id="signOut" (click)="logOutUser()"> Sign Out </a>
   </div>
   <a *ngIf=!user routerLink="/login" id="login">Log In</a>
-  <div class="menuOption" routerLink="/library">Library</div>
-  <div class="menuOption" routerLink="/lists">Lists</div>
-  <div class="menuOption" routerLink="/dashboard">Dashboard</div>
-  <div class="menuOption" routerLink="/following">Following</div>
-  <div class="menuOption" routerLink="/followers">Followers</div>
+  <a class="menuOption" routerLink="/library">Library</a>
+  <a class="menuOption" routerLink="/lists">Lists</a>
+  <a class="menuOption" routerLink="/dashboard">Dashboard</a>
+  <a class="menuOption" routerLink="/following">Following</a>
+  <a class="menuOption" routerLink="/followers">Followers</a>
   <app-item-searchbar></app-item-searchbar>
 </header>
