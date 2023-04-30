@@ -10,7 +10,7 @@
             <div class="errorMessage" *ngIf="this.username.hasError('pattern') && (this.username.touched || this.username.dirty)">An username can only contain alphanumeric characters</div>
     
             <label for="password">Password: </label>
-            <input class="textInput" id="password" type="password" formControlName="password" (ngModelChange)="this.registrationFailed = false" (ngModelChange)="disablePasswordInformation()">
+            <input class="textInput" id="password" type="password" formControlName="password" (ngModelChange)="this.registrationFailed = false" (ngModelChange)="disablePasswordInformation()" (click)="disablePasswordInformation()" (focus)="disablePasswordInformation()">
             <div class="errorMessage" *ngIf="this.password.hasError('required') && (this.password.touched || this.password.dirty)">A password is required</div>
             <div class="errorMessage" *ngIf="this.password.hasError('minlength') && (this.password.touched || this.password.dirty)">A passowrd has to be at least 8 characters long</div>
             <div class="errorMessage" *ngIf="this.password.hasError('noUpperCase') && (this.password.touched || this.password.dirty)">A password must contain an upper case letter</div>
