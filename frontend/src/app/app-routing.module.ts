@@ -9,6 +9,7 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import {LibraryComponent} from "./library/library.component";
 import {ListsComponent} from "./lists/lists.component";
+import {FollowersComponent} from "./followers/followers.component";
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'register', component: RegistoComponent },
   {path: 'item/:id', component: ItemDetailsComponent},
   {path: 'library', component: LibraryComponent},
-  {path: 'lists', component: ListsComponent}
+  {path: 'lists', component: ListsComponent},
+  {path: 'followers', component: FollowersComponent}
 ];
 
 @NgModule({
