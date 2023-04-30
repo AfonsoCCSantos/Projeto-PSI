@@ -23,7 +23,7 @@
                 <li>A lowercase letter</li>
                 <li>A number</li>
             </ul>
-            <p *ngIf="registrationFailed">
+            <p *ngIf="registrationFailed" class="errorMessage">
                 Registration failed. Please check the requirements and try again.
             </p>
             <p *ngIf="usernameAlreadyTaken" class="errorMessage">
