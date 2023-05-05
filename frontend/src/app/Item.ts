@@ -1,5 +1,6 @@
 export interface Item {
     _id: string;
+    type: string;
     name: string;
     description: string;
     plataform: string;
