@@ -6,8 +6,9 @@
   <a *ngFor="let game of games">
     <img src="{{game.main_image}}">
     <div class="gameDescription">
-      {{game.name}}
-      Type: {{game.type}}
+      <span>{{game.name}}</span>
+      <span><span>Type:</span> {{game.type}}</span>
+      <span><span>Price:</span> {{game.price}}€</span>
     </div>
   </a>
 </div>

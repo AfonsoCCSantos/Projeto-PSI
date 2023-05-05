@@ -8,6 +8,7 @@ p {
 
 #cartView {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 3rem;
   padding: 2rem;
 }
@@ -15,13 +16,20 @@ p {
 a {
   color: white;
   display: flex;
+  width: auto;
+  margin: 0;
 }
 .gameDescription {
-  text-align: center;
   margin: 1%;
+  display: flex;
+  flex-direction: column;
+}
+
+span span {
+  color: #8D8DAA;
 }
 
 img {
-  height: 70px;
-  width: 100px;
+  height: 90px;
+  width: 120px;
 }
