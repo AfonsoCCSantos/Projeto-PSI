@@ -1,5 +1,15 @@
 button {
     width: 2.5em;
     font-size: 1.2em;
-    
+    background-color: #ffffff;
+    border-radius: 5em;
+}
+
+button:hover{
+    background-image: linear-gradient(to left, #ffffff 0%, #aab8d1 100%);
+    cursor: pointer;
+}
+
+button:active{
+    background-image: linear-gradient(to left, #ffffff 0%, #aab8d1 51%);
 }
