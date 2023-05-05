@@ -1,3 +1,13 @@
 <app-app-header></app-app-header>
 
 <p>Your Shopping Cart</p>
+
+<div id="cartView">
+  <a *ngFor="let game of games">
+    <img src="{{game.main_image}}">
+    <div class="gameDescription">
+      {{game.name}}
+      Type: {{game.type}}
+    </div>
+  </a>
+</div>

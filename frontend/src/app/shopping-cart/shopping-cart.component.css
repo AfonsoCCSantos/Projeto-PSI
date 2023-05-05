@@ -1,0 +1,27 @@
+p {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1%;
+  color: white;
+}
+
+
+#cartView {
+  display: grid;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+a {
+  color: white;
+  display: flex;
+}
+.gameDescription {
+  text-align: center;
+  margin: 1%;
+}
+
+img {
+  height: 70px;
+  width: 100px;
+}
