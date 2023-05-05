@@ -16,13 +16,18 @@ p {
 a {
   color: white;
   display: flex;
-  width: auto;
   margin: 0;
+  background-color: #1b2323;
+  height: 7rem;
+  width: 25rem;
+  padding: 0.5rem;
+  justify-content: flex-start;
 }
 .gameDescription {
   margin: 1%;
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 span span {
@@ -32,4 +37,5 @@ span span {
 img {
   height: 90px;
   width: 120px;
+  align-self: center;
 }
