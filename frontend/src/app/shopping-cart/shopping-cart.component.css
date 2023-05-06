@@ -4,25 +4,22 @@ button {
     background-color: #416f6f;
     border-radius: 1em;
     border: none;
-}
-
-button:hover{
+  }
+  
+  button:hover {
     background-image: linear-gradient(to left, #416f6f 0%, #295050 100%);
     cursor: pointer;
-}
-
-button:active{
+  }
+  
+  button:active {
     background-image: linear-gradient(to left, #416f6f 0%, #295050 51%);
-}
-
-span {
-    position: absolute;
+  }
+  
+  #numOfItems {
     display: inline-block;
     width: 1em;
     height: 1em;
     background-color: red;
     text-align: center;
     border-radius: 0.5em;
-    top: 1.2em;
-    right: 16.3em;
-}
+  }
