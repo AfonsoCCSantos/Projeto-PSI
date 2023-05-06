@@ -42,13 +42,53 @@ img {
   align-self: center;
 }
 
+#alterItems {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#alterQt {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  align-self: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#alterQt span {
+  align-self: center;
+}
+
+#alterQt button {
+  border-radius: 50%;
+  border: solid white 0.1rem;
+  background-color: transparent;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+#alterQt i {
+  color: white;
+  font-size: 1rem;
+  align-self: center;
+}
+
+
 #deleteItem {
   color: #A91D36 ;
   align-self: flex-end;
-  width: 40%;
   display: flex;
   justify-content: center;
   gap: 0.3rem;
+  height: 20%;
 }
 
 #deleteItem button {
