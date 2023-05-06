@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class ShoppingCartComponent {
 
+  numberOfItems: number = 0;
+
+  constructor() {}
+
+  ngOnInit() {
+    
+  }
+
 }
