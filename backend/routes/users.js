@@ -7,6 +7,8 @@ const users_controller = require("../controllers/userController");
 /* GET users listing. */
 router.get('/:name', users_controller.getUserByUserName);
 
-router.post('/register', users_controller.registerUser)
+router.post('/register', users_controller.registerUser);
+
+router.post("/wishlist/:item_id", user_controller.add_item_to_wishlist);
 
 module.exports = router;
