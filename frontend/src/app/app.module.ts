@@ -18,6 +18,8 @@ import { ListsComponent } from './lists/lists.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
 import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view.component";
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view
     FollowersComponent,
     FollowingComponent,
     ShoppingCartViewComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
