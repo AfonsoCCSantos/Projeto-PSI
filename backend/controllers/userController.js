@@ -44,28 +44,6 @@ exports.registerUser = (req, res, next) => {
       }
     });
 }
-exports.add_item_to_wishlist = (req, res, next) => {
-    User.findOne({name:req.params.user_name})
-        .exec((err,user) => {
-            if(err){
-                next(err);
-            }
-            if(user == null){
-                res.status(404);
-                return;
-            }
-            for (let item of user.wish_items) { // check if this items is already on user's wishlist
-                if(item._id === req.params.item_id){
-                    res.json({answer:"This item is already on your Wishlist"})
-                    return;
-                }
-            }
-
-
-
-        })
-
-}
 
 
 
