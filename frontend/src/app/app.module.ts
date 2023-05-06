@@ -17,7 +17,8 @@ import { LibraryComponent } from './library/library.component';
 import { ListsComponent } from './lists/lists.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ListsComponent,
     FollowersComponent,
     FollowingComponent,
-    ShoppingCartComponent,
+    ShoppingCartViewComponent,
   ],
   imports: [
     BrowserModule,

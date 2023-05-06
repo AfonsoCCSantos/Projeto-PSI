@@ -3,11 +3,11 @@ import {Item} from "../Item";
 import {ItemService} from "../item.service";
 
 @Component({
-  selector: 'app-shopping-cart',
-  templateUrl: './shopping-cart.component.html',
-  styleUrls: ['./shopping-cart.component.css']
+  selector: 'app-shopping-cart-view',
+  templateUrl: './shopping-cart-view.component.html',
+  styleUrls: ['./shopping-cart-view.component.css']
 })
-export class ShoppingCartComponent {
+export class ShoppingCartViewComponent {
 
   games : Item[] | undefined;
 
