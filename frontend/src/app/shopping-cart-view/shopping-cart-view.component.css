@@ -1,0 +1,41 @@
+p {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1%;
+  color: white;
+}
+
+
+#cartView {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3rem;
+  padding: 2rem;
+}
+
+a {
+  color: white;
+  display: flex;
+  margin: 0;
+  background-color: #1b2323;
+  height: 7rem;
+  width: 25rem;
+  padding: 0.5rem;
+  justify-content: flex-start;
+}
+.gameDescription {
+  margin: 1%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+span span {
+  color: #8D8DAA;
+}
+
+img {
+  height: 90px;
+  width: 120px;
+  align-self: center;
+}
