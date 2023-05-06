@@ -17,6 +17,7 @@ import { LibraryComponent } from './library/library.component';
 import { ListsComponent } from './lists/lists.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
+import { AddToWishlistButtonComponent } from './add-to-wishlist-button/add-to-wishlist-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { FollowingComponent } from './following/following.component';
     ListsComponent,
     FollowersComponent,
     FollowingComponent,
+    AddToWishlistButtonComponent,
   ],
   imports: [
     BrowserModule,
