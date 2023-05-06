@@ -64,7 +64,7 @@ exports.add_item_to_wishlist = (req, res, next) => {
             }
             user.wish_items.push(req.body.item_id)
 
-            User.findByIdAndUpdate(req.params.id,user,{},(err,old_user) =>{
+            User.findByIdAndUpdate(user._id,user,{},(err,old_user) =>{
                 if (err) {
                     return next(err);
                 }
