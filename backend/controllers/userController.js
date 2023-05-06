@@ -57,13 +57,20 @@ exports.add_item_to_wishlist = (req, res, next) => {
                 return;
             }
             for (let item of user.wish_items) { // check if this items is already on user's wishlist
-                if(item._id === req.body._id){
-                    res.json({answer:"This item is already on your Wishlist"})
+                if(item._id === req.body.item_id){
+                    res.json({ succeeded: false})
                     return;
                 }
             }
+            user.wish_items.push(req.body.item_id)
 
+            User.findByIdAndUpdate(req.params.id,user,{},(err,old_user) =>{
+                if (err) {
+                    return next(err);
+                }
 
+                res.json({succeeded:true});
+            });
 
         })
 
