@@ -14,3 +14,15 @@ button:hover{
 button:active{
     background-image: linear-gradient(to left, #416f6f 0%, #295050 51%);
 }
+
+span {
+    position: absolute;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: red;
+    text-align: center;
+    border-radius: 0.5em;
+    top: 1.2em;
+    right: 16.3em;
+}
