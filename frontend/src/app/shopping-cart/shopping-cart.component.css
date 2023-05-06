@@ -1,15 +1,16 @@
 button {
     width: 2.5em;
     font-size: 1.2em;
-    background-color: #ffffff;
-    border-radius: 5em;
+    background-color: #416f6f;
+    border-radius: 1em;
+    border: none;
 }
 
 button:hover{
-    background-image: linear-gradient(to left, #ffffff 0%, #aab8d1 100%);
+    background-image: linear-gradient(to left, #416f6f 0%, #295050 100%);
     cursor: pointer;
 }
 
 button:active{
-    background-image: linear-gradient(to left, #ffffff 0%, #aab8d1 51%);
+    background-image: linear-gradient(to left, #416f6f 0%, #295050 51%);
 }
