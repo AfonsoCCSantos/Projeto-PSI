@@ -18,9 +18,9 @@ a {
   display: flex;
   margin: 0;
   background-color: #1b2323;
-  height: 7rem;
-  width: 25rem;
-  padding: 0.5rem;
+  height: 8rem;
+  width: 26rem;
+  padding: 0.5rem 0.2rem 0.5rem 0.5rem ;
   justify-content: flex-start;
 }
 .gameDescription {
@@ -28,6 +28,8 @@ a {
   display: flex;
   flex-direction: column;
   align-self: center;
+  gap: 0.1rem;
+  width:60%
 }
 
 span span {
@@ -35,7 +37,38 @@ span span {
 }
 
 img {
-  height: 90px;
-  width: 120px;
+  height: 6rem;
+  width: 8rem;
   align-self: center;
 }
+
+#deleteItem {
+  color: #A91D36 ;
+  align-self: flex-end;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+#deleteItem button {
+  border-radius: 50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: #A91D36 ;
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+span span.close {
+  color: black;
+  align-self: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
