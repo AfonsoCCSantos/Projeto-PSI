@@ -71,9 +71,7 @@ exports.add_item_to_wishlist = (req, res, next) => {
 
                 res.json({succeeded:true});
             });
-
         })
-
 }
 
 
