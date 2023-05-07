@@ -1,45 +1,50 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
 
-  constructor() { }
+    quantityIncreased: EventEmitter<void> = new EventEmitter();
+    quantityDecreased: EventEmitter<void> = new EventEmitter();
 
-  addItemToShoppingCart(itemId: string) {
-    let currentItemsInShoppingCart = this.getItemsInShoppingCart();
-    if (!currentItemsInShoppingCart) { //There were no items in the shopping cart
-      currentItemsInShoppingCart = {[itemId]: 1}
+    constructor() { }
+
+    addItemToShoppingCart(itemId: string) {
+        let currentItemsInShoppingCart = this.getItemsInShoppingCart();
+        if (!currentItemsInShoppingCart) { //There were no items in the shopping cart
+            currentItemsInShoppingCart = {[itemId]: 1}
+        }
+        else { //There were already items in the shopping cart
+            currentItemsInShoppingCart[itemId] = 1;
+        }
+        localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
     }
-    else { //There were already items in the shopping cart
-      currentItemsInShoppingCart[itemId] = 1;
+
+    increaseQuantityOfItemInShoppingCart(itemId: string) {
+        this.updateQuantityOfItemInShoppingCart(itemId, 1);
+        this.quantityIncreased.emit();
     }
-    localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
-  }
-  
-  increaseQuantityOfItemInShoppingCart(itemId: string) {
-    this.updateQuantityOfItemInShoppingCart(itemId, 1);
-  }
 
-  decreaseQuantityOfItemInShoppingCart(itemId: string) {
-    this.updateQuantityOfItemInShoppingCart(itemId, -1);
-  }
-
-  private getItemsInShoppingCart(): any {
-    let currentItemsInShoppingCart = null;
-    const savedShoppingCartItems = localStorage.getItem('shoppingCartItems');
-    if (savedShoppingCartItems != null) {
-      currentItemsInShoppingCart = JSON.parse(savedShoppingCartItems);
+    decreaseQuantityOfItemInShoppingCart(itemId: string) {
+        this.updateQuantityOfItemInShoppingCart(itemId, -1);
+        this.quantityDecreased.emit();
     }
-    return currentItemsInShoppingCart;
-  }
 
-  private updateQuantityOfItemInShoppingCart(itemId: string, quantityToUpdate: number) {
-    let currentItemsInShoppingCart = this.getItemsInShoppingCart();
-    currentItemsInShoppingCart[itemId] = currentItemsInShoppingCart[itemId] + quantityToUpdate;
-    localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
-  }
+    private getItemsInShoppingCart(): any {
+        let currentItemsInShoppingCart = null;
+        const savedShoppingCartItems = localStorage.getItem('shoppingCartItems');
+        if (savedShoppingCartItems != null) {
+            currentItemsInShoppingCart = JSON.parse(savedShoppingCartItems);
+        }
+        return currentItemsInShoppingCart;
+    }
+
+    private updateQuantityOfItemInShoppingCart(itemId: string, quantityToUpdate: number) {
+        let currentItemsInShoppingCart = this.getItemsInShoppingCart();
+        currentItemsInShoppingCart[itemId] = currentItemsInShoppingCart[itemId] + quantityToUpdate;
+        localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
+    }
 
 
 }
