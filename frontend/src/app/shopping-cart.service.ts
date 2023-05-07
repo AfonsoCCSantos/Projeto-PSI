@@ -5,8 +5,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class ShoppingCartService {
 
-    quantityIncreased: EventEmitter<void> = new EventEmitter();
-    quantityDecreased: EventEmitter<void> = new EventEmitter();
+    quantityUpdated: EventEmitter<number> = new EventEmitter();
 
     constructor() { }
 
@@ -21,14 +20,18 @@ export class ShoppingCartService {
         localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
     }
 
+    removeItemFromShoppingCart(itemId: string) {
+
+    }
+
     increaseQuantityOfItemInShoppingCart(itemId: string) {
         this.updateQuantityOfItemInShoppingCart(itemId, 1);
-        this.quantityIncreased.emit();
+        this.quantityUpdated.emit(1);
     }
 
     decreaseQuantityOfItemInShoppingCart(itemId: string) {
         this.updateQuantityOfItemInShoppingCart(itemId, -1);
-        this.quantityDecreased.emit();
+        this.quantityUpdated.emit(-1);
     }
 
     private getItemsInShoppingCart(): any {

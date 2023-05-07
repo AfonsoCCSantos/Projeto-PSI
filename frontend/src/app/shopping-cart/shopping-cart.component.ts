@@ -11,12 +11,10 @@ import { Subscription } from 'rxjs';
 export class ShoppingCartComponent {
 
   numberOfItems: number = 0;
-  quantityIncreasedSubscription: Subscription;
-  quantityDecreasedSubscription: Subscription;
+  quantityUpdatedSubscription: Subscription;
 
   constructor(private router: Router, private shoppingCartService: ShoppingCartService) {
-    this.quantityIncreasedSubscription = Subscription.EMPTY;
-    this.quantityDecreasedSubscription = Subscription.EMPTY;
+    this.quantityUpdatedSubscription = Subscription.EMPTY;
   }
 
   goToShoppingCartView() {
@@ -24,11 +22,12 @@ export class ShoppingCartComponent {
   }
 
   ngOnInit() {
-    this.quantityIncreasedSubscription = this.shoppingCartService.quantityIncreased.subscribe(() => {
-      this.numberOfItems++;
+    this.quantityUpdatedSubscription = this.shoppingCartService.quantityUpdated.subscribe((qt: number) => {
+      this.numberOfItems += qt;
     });
-    this.quantityDecreasedSubscription = this.shoppingCartService.quantityDecreased.subscribe(() => {
-      this.numberOfItems--;
-    });
+  }
+
+  ngOnDestroy() {
+    this.quantityUpdatedSubscription.unsubscribe();
   }
 }
