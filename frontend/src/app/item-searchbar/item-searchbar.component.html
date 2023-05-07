@@ -5,7 +5,7 @@
     </div>
     <ul class="search-result" *ngIf="showList">
         <li *ngFor="let item of items$ | async" >
-        <a routerLink="/detail/{{item._id}}">
+        <a routerLink="/item/{{item._id}}">
             {{item.name}}
         </a>
         </li>

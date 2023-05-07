@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-app-header></app-app-header>
 
 <p>Your Shopping Cart</p>
@@ -10,6 +11,20 @@
       <span><span>Type:</span> {{game.type}}</span>
       <span><span>Price:</span> {{game.price}}€</span>
       <span><span>Quantity:</span> 0 units</span>
+    </div>
+    <div id="alterItems">
+      <div id="alterQt">
+          <span>
+            <button type="button"><i class="fa fa-angle-up"></i></button>
+          </span>
+          <span>0</span>
+        <span>
+            <button type="button"><i class="fa fa-angle-down"></i></button>
+          </span>
+      </div>
+      <span id="deleteItem">Delete Item
+        <button type="button"><span class="close">&times;</span></button>
+      </span>
     </div>
   </a>
 </div>
