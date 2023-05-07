@@ -1,25 +1,30 @@
 button {
-    width: 2.5em;
-    font-size: 1.2em;
-    background-color: #416f6f;
-    border-radius: 1em;
-    border: none;
-  }
+  position: relative;
+  width: 2.8em;
+  height: 1.5em;
+  font-size: 1.1em;
+  background-color: #416f6f;
+  border-radius: 1em;
+  border: none;
+}
   
-  button:hover {
-    background-image: linear-gradient(to left, #416f6f 0%, #295050 100%);
-    cursor: pointer;
-  }
-  
-  button:active {
-    background-image: linear-gradient(to left, #416f6f 0%, #295050 51%);
-  }
-  
-  #numOfItems {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-color: red;
-    text-align: center;
-    border-radius: 0.5em;
-  }
+button:hover {
+  background-image: linear-gradient(to left, #416f6f 0%, #295050 100%);
+  cursor: pointer;
+}
+
+button:active {
+  background-image: linear-gradient(to left, #416f6f 0%, #295050 51%);
+}
+
+#numOfItems {
+  position: absolute;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: red;
+  text-align: center;
+  border-radius: 0.5em;
+  top: -0.5em;
+  right: -0.5em;
+}
