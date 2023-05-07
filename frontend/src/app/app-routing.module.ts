@@ -24,7 +24,8 @@ const routes: Routes = [
   {path: 'lists', component: ListsComponent},
   {path: 'followers', component: FollowersComponent},
   {path: 'following', component: FollowingComponent},
-  {path: 'shoppingcart', component: ShoppingCartViewComponent}
+  {path: 'shoppingcart', component: ShoppingCartViewComponent},
+  {path: 'item/:id', component: ItemDetailsComponent}
 ];
 
 @NgModule({
