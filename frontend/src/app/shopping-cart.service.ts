@@ -18,10 +18,14 @@ export class ShoppingCartService {
             currentItemsInShoppingCart[itemId] = 1;
         }
         localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
+        this.quantityUpdated.emit(1);
     }
 
     removeItemFromShoppingCart(itemId: string) {
-
+        let currentItemsInShoppingCart = this.getItemsInShoppingCart();
+        let numOfItems = currentItemsInShoppingCart[itemId];
+        delete currentItemsInShoppingCart.itemId;
+        this.quantityUpdated.emit(-numOfItems);
     }
 
     increaseQuantityOfItemInShoppingCart(itemId: string) {
