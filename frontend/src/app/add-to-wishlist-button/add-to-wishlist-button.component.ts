@@ -22,9 +22,10 @@ export class AddToWishlistButtonComponent {
       .subscribe(answer =>{
         if(answer.succeeded){
           //Show window with sucess msg
+          console.log("Siu")
         }
         else{
-          //Show window with failure msg
+          console.log("No")
         }
       })
 
