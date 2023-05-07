@@ -86,8 +86,6 @@ body {
 }
 
 #price {
-    height: 6em;
-    width: 10.5em;
 }
 
 #classification {
@@ -98,7 +96,7 @@ body {
 #specs {
     height: 7em;
     width: 100%;
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 #price > h2 {
@@ -110,9 +108,10 @@ body {
 }
 
 #purchase-wishlist {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0.5em;
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5em;
 }
 
 #purchase-wishlist > * {
@@ -129,13 +128,6 @@ body {
     align-items: center;
 }
 
-#wishlist {
-    width: 3em;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #purchase > img {
     width: 1.6em;
