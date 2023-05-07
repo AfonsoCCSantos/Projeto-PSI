@@ -18,6 +18,10 @@ import { ListsComponent } from './lists/lists.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
 import { AddToWishlistButtonComponent } from './add-to-wishlist-button/add-to-wishlist-button.component';
+import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view.component";
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +37,8 @@ import { AddToWishlistButtonComponent } from './add-to-wishlist-button/add-to-wi
     FollowersComponent,
     FollowingComponent,
     AddToWishlistButtonComponent,
+    ShoppingCartViewComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
