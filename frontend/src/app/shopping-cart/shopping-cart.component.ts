@@ -25,6 +25,8 @@ export class ShoppingCartComponent {
     this.quantityUpdatedSubscription = this.shoppingCartService.quantityUpdated.subscribe((qt: number) => {
       this.numberOfItems += qt;
     });
+    //Initialise the number of items with the number of items on local storage
+    
   }
 
   ngOnDestroy() {
