@@ -12,6 +12,7 @@ import { MessageService } from './message.service';
 export class ItemService {
 
   private itemsUrl = '/api/items';
+  private itemUrl = '/api/item';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -33,7 +34,7 @@ export class ItemService {
   }
 
   getItem(id: string): Observable<Item> {
-    const url = `${this.itemsUrl}/${id}`;
+    const url = `${this.itemUrl}/${id}`;
     return this.http.get<Item>(url).pipe(
       tap(_ => this.log(`fetched item id=${id}`)),
       catchError(this.handleError<Item>(`getItem id=${id}`))
