@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <app-app-header></app-app-header>
 
-<p>Your Shopping Cart</p>
+<p>Your Shopping Cart <span>(Total Price: {{totalPrice}}€)</span></p>
 
 <div id="cartView">
   <a *ngFor="let game of games | keyvalue">
