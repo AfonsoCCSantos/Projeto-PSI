@@ -37,3 +37,16 @@ exports.add_item = (req, res, next) => {
 
     res.send();
 };
+
+exports.get_item = (req, res, next) => {
+    Item.findOne({_id: req.params.id})
+        .exec((err, item) => {
+            if(err){
+                next(err);
+            }
+            if(item == null){
+                res.status(404);
+            }
+            res.json(item);
+        })
+};
