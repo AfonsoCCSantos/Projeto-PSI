@@ -37,6 +37,15 @@ export class ShoppingCartService {
         this.updateQuantityOfItemInShoppingCart(itemId, -1);
         this.quantityUpdated.emit(-1);
     }
+    
+    countItemsInShoppingCart() : number{
+        let numOfItems = 0;
+        let currentItemsInShoppingCart = this.getItemsInShoppingCart();
+        for (let key in currentItemsInShoppingCart) {
+            numOfItems += currentItemsInShoppingCart[key];
+        }
+        return numOfItems;
+    }
 
     private getItemsInShoppingCart(): any {
         let currentItemsInShoppingCart = null;

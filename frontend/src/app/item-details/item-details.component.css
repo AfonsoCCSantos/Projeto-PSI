@@ -125,6 +125,15 @@ body {
     justify-content: center;
 }
 
+#purchase:hover{
+    background-image: linear-gradient(to left, #21A78F 0%, #35d0b2 100%);
+    cursor: pointer;
+}
+  
+#purchase:active{
+    background-image: linear-gradient(to left, #21A78F 0%, #4adac1 51%);
+}
+
 
 #purchase > img {
     width: 1.6em;
