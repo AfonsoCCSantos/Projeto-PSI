@@ -117,11 +117,12 @@ body {
     font-weight: bold;
     border: none;
     font-size: 0.9em;
-    width: 89%;
+    width: 100%;
     border-radius: 0.5em;
     display: flex;
-    padding: 0.5em;
+    padding: 0.2em;
     align-items: center;
+    justify-content: center;
 }
 
 #purchase:hover{
@@ -137,7 +138,8 @@ body {
 #purchase > img {
     width: 1.6em;
     height: 1.6em;
-    padding-bottom: 0.3em;
+    margin-bottom: 0.5em;
+    margin-right: 0.3em;
 }
 
 #purchase > p {
@@ -145,7 +147,9 @@ body {
     font-weight: 500;
     font-size: 0.9em;
     margin: 0;
-  font-weight: bold;
+    font-weight: bold;
+    padding-right: 0;
+    margin-right: 0.2em;
 }
 
 #wishlist > img {
