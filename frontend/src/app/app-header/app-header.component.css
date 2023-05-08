@@ -73,3 +73,41 @@ a {
   transition: transform 250ms ease-in-out;
 }
 
+ul {
+  display: none;
+  list-style-type:none;
+  position: absolute;
+  padding-left: 3.7em;
+  padding-top: 0.35em;
+}
+
+li {
+  background-color: #1b2323;
+  text-align: left;
+  border: 1px solid white;
+}
+
+li:hover{
+  background-color: #253232;
+}
+
+
+
+ul p {
+  width: 7em;
+  height: 1em;
+  padding-left: 0.3em;
+  font-size: 1em;
+}
+
+#list:hover + .hidden, .hidden:hover {
+  display: block;
+  cursor: pointer;
+}
+
+
+#lists{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
