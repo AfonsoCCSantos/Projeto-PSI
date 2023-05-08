@@ -58,7 +58,7 @@ exports.add_item_to_wishlist = (req, res, next) => {
             }
             for (let item of user.wish_items) { // check if this items is already on user's wishlist
                 if(item._id == req.body.item_id){
-                    res.json({succeeded: false, msg:"This item is already in the Wishlist"});
+                    res.status(409).json({succeeded: false, msg:"This item is already in the Wishlist"});
                     return;
                 }
             }
@@ -79,6 +79,7 @@ exports.add_item_to_wishlist = (req, res, next) => {
                        if (err) {
                            return next(err);
                        }
+                       
                        res.json({succeeded: true, msg:"Item added successfully to Wishlist"});
 
                    });
