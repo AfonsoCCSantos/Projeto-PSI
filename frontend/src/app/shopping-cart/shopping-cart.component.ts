@@ -20,13 +20,12 @@ export class ShoppingCartComponent {
   goToShoppingCartView() {
     this.router.navigate(["shoppingcart"]);
   }
-
+  
   ngOnInit() {
     this.quantityUpdatedSubscription = this.shoppingCartService.quantityUpdated.subscribe((qt: number) => {
       this.numberOfItems += qt;
     });
-    //Initialise the number of items with the number of items on local storage
-    
+    this.numberOfItems = this.shoppingCartService.countItemsInShoppingCart();
   }
 
   ngOnDestroy() {
