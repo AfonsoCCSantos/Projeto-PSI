@@ -4,7 +4,7 @@ import { Injectable, EventEmitter } from '@angular/core';
   providedIn: 'root'
 })
 export class ShoppingCartService {
-    
+
     quantityUpdated: EventEmitter<number> = new EventEmitter();
 
     constructor() { }
@@ -37,7 +37,7 @@ export class ShoppingCartService {
         this.updateQuantityOfItemInShoppingCart(itemId, -1);
         this.quantityUpdated.emit(-1);
     }
-    
+
     countItemsInShoppingCart() : number{
         let numOfItems = 0;
         let currentItemsInShoppingCart = this.getItemsInShoppingCart();
@@ -47,7 +47,7 @@ export class ShoppingCartService {
         return numOfItems;
     }
 
-    private getItemsInShoppingCart(): any {
+    public getItemsInShoppingCart(): any {
         let currentItemsInShoppingCart = null;
         const savedShoppingCartItems = localStorage.getItem('shoppingCartItems');
         if (savedShoppingCartItems != null) {

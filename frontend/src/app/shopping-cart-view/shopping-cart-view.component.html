@@ -4,20 +4,20 @@
 <p>Your Shopping Cart</p>
 
 <div id="cartView">
-  <a *ngFor="let game of games">
-    <img src="{{game.main_image}}">
+  <a *ngFor="let game of games | keyvalue">
+    <img src="{{game.key.main_image}}">
     <div class="gameDescription">
-      <span>{{game.name}}</span>
-      <span><span>Type:</span> {{game.type}}</span>
-      <span><span>Price:</span> {{game.price}}€</span>
-      <span><span>Quantity:</span> 0 units</span>
+      <span>{{game.key.name}}</span>
+      <span><span>Type:</span> {{game.key.type}}</span>
+      <span><span>Price:</span> {{game.key.price}}€</span>
+      <span><span>Quantity:</span> {{game.value}} Unit(s)</span>
     </div>
     <div id="alterItems">
       <div id="alterQt">
           <span>
             <button type="button"><i class="fa fa-angle-up"></i></button>
           </span>
-          <span>0</span>
+          <span>{{game.value}}</span>
         <span>
             <button type="button"><i class="fa fa-angle-down"></i></button>
           </span>

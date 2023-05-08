@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Item} from "../Item";
 import {ItemService} from "../item.service";
+import {ShoppingCartService} from "../shopping-cart.service";
 
 @Component({
   selector: 'app-shopping-cart-view',
@@ -9,12 +9,26 @@ import {ItemService} from "../item.service";
 })
 export class ShoppingCartViewComponent {
 
-  games : Item[] | undefined;
+  games = new Map();
 
-  constructor(private itemService : ItemService) {}
+  constructor(private itemService : ItemService, private shoppingCartService : ShoppingCartService) {}
 
   ngOnInit() {
-    this.itemService.getItems().subscribe(items => this.games = items);
+    // /*So para testar*/
+    // this.shoppingCartService.addItemToShoppingCart("644bf9d023ef3a462196c92d");
+    // this.shoppingCartService.addItemToShoppingCart("644c01db032b9210a50a566c");
+    // this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");
+    // /*              */
+
+    let items = this.shoppingCartService.getItemsInShoppingCart();
+    let mapGames = new Map<string,Number>(Object.entries(items));
+
+
+    for(let item of mapGames.keys()) {
+      this.itemService.getItem(item).subscribe(i =>  {this.games.set(i, mapGames.get(item)); });
+
+    }
+      console.log(this.games.keys());
   }
 
 }
