@@ -3,7 +3,7 @@
 
 <p>Your Shopping Cart <span>(Total Price: {{totalPrice}}€)</span></p>
 
-<div id="cartView">
+<div id="cartView" *ngIf="games.size != 0">
   <a *ngFor="let game of games | keyvalue">
     <img src="{{game.key.main_image}}">
     <div class="gameDescription">
@@ -27,4 +27,8 @@
       </span>
     </div>
   </a>
+</div>
+
+<div>
+  Empty Cart!
 </div>

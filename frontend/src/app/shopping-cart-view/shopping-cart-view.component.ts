@@ -21,8 +21,11 @@ export class ShoppingCartViewComponent {
     // this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");
     /*              */
 
-    let items = this.shoppingCartService.getItemsInShoppingCart();
-    let mapGames = new Map<string,Number>(Object.entries(items));
+    let shoppingCartItems = localStorage.getItem('shoppingCartItems');
+    if (shoppingCartItems == null) return;
+
+    let shoppingCartItemsString = JSON.parse(shoppingCartItems);
+    let mapGames = new Map<string,Number>(Object.entries(shoppingCartItemsString));
 
 
     for(let item of mapGames.keys()) {
