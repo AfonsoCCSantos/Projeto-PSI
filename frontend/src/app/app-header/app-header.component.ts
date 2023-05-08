@@ -35,8 +35,7 @@ export class AppHeaderComponent {
   logOutUser() {
     localStorage.removeItem("user_name");
     sessionStorage.removeItem("user_name");
+    localStorage.removeItem("shoppingCartItems");
   }
-
-
 
 }
