@@ -83,7 +83,7 @@ body {
 }
 
 #classification {
-    height: 6em;
+    height: 8.2em;
     width: 7.5em;
 }
 
@@ -161,7 +161,7 @@ body {
     color: #21A78F;
     display: flex;
     justify-content: center;
-    margin-top: 0.7em;
+    margin-top: 2em;
 }
 
 #class-value {
