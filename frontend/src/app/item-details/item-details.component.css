@@ -6,9 +6,11 @@ body {
     display: flex;
 }
 
-#right-side {
+#background {
     background-color: #131615;
-    width:15%;
+    width:100%;
+    display: flex;
+    justify-content: center;
 }
 
 #content {
@@ -18,11 +20,6 @@ body {
     padding-bottom: 1.5em;
     padding-left: 5em;
     padding-right: 5em;
-}
-
-#left-side {
-    background-color: #131615;
-    width: 15%;
 }
 
 #content > h1 {
