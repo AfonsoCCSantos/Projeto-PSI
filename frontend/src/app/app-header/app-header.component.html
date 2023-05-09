@@ -6,14 +6,20 @@
   <a *ngIf=!user routerLink="/login" id="login">Log In</a>
   <a class="menuOption" routerLink="/library">Library</a>
 
-  <a class="menuOption" routerLink="/lists" *ngIf="!user">Lists</a>
-  <div class="menuOption" id="lists" *ngIf="user">
+
+  <div class="menuOption" id="lists">
     <a id="list" routerLink="/lists">Lists</a>
     <ul class="hidden">
-      <li routerLink="/wishlist/{{user}}">
+      <li *ngIf="user" routerLink="/wishlist/{{user}}">
         <p> Wishlist</p>
       </li>
-      <li routerLink="/lists">
+      <li *ngIf="user" routerLink="/lists">
+        <p> Custom Lists</p>
+      </li>
+      <li *ngIf="!user" routerLink="/login">
+        <p> Wishlist</p>
+      </li>
+      <li *ngIf="!user" routerLink="/login">
         <p> Custom Lists</p>
       </li>
     </ul>
