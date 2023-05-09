@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ItemService} from "../item.service";
 import {ShoppingCartService} from "../shopping-cart.service";
+import {Item} from "../Item";
 
 @Component({
   selector: 'app-shopping-cart-view',
@@ -9,13 +10,15 @@ import {ShoppingCartService} from "../shopping-cart.service";
 })
 export class ShoppingCartViewComponent {
 
-  games = new Map();
+  games : Item[] = [];
   totalPrice = 0;
+  itemsInCart : any;
 
   constructor(private itemService : ItemService, private shoppingCartService : ShoppingCartService) {}
 
   ngOnInit() {
     /*So para testar*/
+    // this.shoppingCartService.removeItemFromShoppingCart("644c01db032b9210a50a566c");
     // this.shoppingCartService.addItemToShoppingCart("644bf9d023ef3a462196c92d");
     // this.shoppingCartService.addItemToShoppingCart("644c01db032b9210a50a566c");
     // this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");
@@ -24,18 +27,19 @@ export class ShoppingCartViewComponent {
     let shoppingCartItems = localStorage.getItem('shoppingCartItems');
     if (shoppingCartItems == null) return;
 
-    let shoppingCartItemsString = JSON.parse(shoppingCartItems);
-    let mapGames = new Map<string,Number>(Object.entries(shoppingCartItemsString));
+    this.itemsInCart = JSON.parse(shoppingCartItems);
+    if (this.itemsInCart) {
+      let items_ids = Object.keys(this.itemsInCart);
 
+      for(let item of items_ids) {
+        this.itemService.getItem(item).subscribe(currItem =>  {
+          this.games.push(currItem);
+          this.totalPrice += Number(currItem.price);
+        });
 
-    for(let item of mapGames.keys()) {
-      this.itemService.getItem(item).subscribe(currItem =>  {
-        this.games.set(currItem, mapGames.get(item));
-        this.totalPrice += Number(currItem.price);
-      });
-
+      }
     }
-      console.log(this.games.keys());
+
   }
 
 }

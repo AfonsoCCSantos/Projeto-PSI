@@ -3,21 +3,21 @@
 
 <p>Your Shopping Cart <span>(Total Price: {{totalPrice}}€)</span></p>
 
-<div id="cartView" *ngIf="games.size != 0">
-  <a *ngFor="let game of games | keyvalue">
-    <img src="{{game.key.main_image}}">
+<div id="cartView" *ngIf="games.length != 0">
+  <a *ngFor="let game of games">
+    <img src="{{game.main_image}}">
     <div class="gameDescription">
-      <span>{{game.key.name}}</span>
-      <span><span>Type:</span> {{game.key.type}}</span>
-      <span><span>Price:</span> {{game.key.price}}€</span>
-      <span><span>Quantity:</span> {{game.value}} Unit(s)</span>
+      <span>{{game.name}}</span>
+      <span><span>Type:</span> {{game.type}}</span>
+      <span><span>Price:</span> {{game.price}}€</span>
+      <span><span>Quantity:</span> {{itemsInCart[game._id]}} Unit(s)</span>
     </div>
     <div id="alterItems">
       <div id="alterQt">
           <span>
             <button type="button"><i class="fa fa-angle-up"></i></button>
           </span>
-          <span>{{game.value}}</span>
+          <span>{{itemsInCart[game._id]}}</span>
         <span>
             <button type="button"><i class="fa fa-angle-down"></i></button>
           </span>
@@ -29,6 +29,6 @@
   </a>
 </div>
 
-<div>
+<div *ngIf="games.length == 0">
   Empty Cart!
 </div>
