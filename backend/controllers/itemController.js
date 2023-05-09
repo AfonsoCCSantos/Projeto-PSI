@@ -7,15 +7,6 @@ exports.items_search_list = (req, res, next) => {
     });
 };
 
-exports.item_by_id = (req, res, next) => {
-    Item.findById({ "_id" : req.params.id})
-        .exec((err, item)=>{
-            if (err)
-                return next(err);
-            res.json(item);
-        });
-};
-
 exports.items_list = (req, res, next) => {
     Item.find().exec(function (err, list_items) {
         if (err) return next(err);
