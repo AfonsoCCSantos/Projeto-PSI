@@ -12,6 +12,7 @@ import {ListsComponent} from "./lists/lists.component";
 import {FollowersComponent} from "./followers/followers.component";
 import {FollowingComponent} from "./following/following.component";
 import {WishlistComponent} from "./wishlist/wishlist.component";
+import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view.component";
 
 const routes: Routes = [
   {path: "", redirectTo: "/dashboard", pathMatch: "full" },
@@ -24,7 +25,9 @@ const routes: Routes = [
   {path: 'lists', component: ListsComponent},
   {path: 'followers', component: FollowersComponent},
   {path: 'following', component: FollowingComponent},
-  {path: 'wishlist/:userName', component: WishlistComponent}
+  {path: 'wishlist/:userName', component: WishlistComponent},
+  {path: 'shoppingcart', component: ShoppingCartViewComponent},
+  {path: 'item/:id', component: ItemDetailsComponent}
 ];
 
 @NgModule({

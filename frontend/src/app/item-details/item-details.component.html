@@ -1,8 +1,60 @@
-<div *ngIf="item">
-    <h2>{{item.name| uppercase}} Profile</h2>
-    <div>
-        <div id="desc">{{item.description}}</div>
-        <div id="classification">{{item.classification}}</div>
-        <div id="main_image">{{item.main_image}}</div>
+<div class="container">
+    <div id="background">
+    <div id="content">
+        <h1>Minecraft</h1>
+
+        <div id="container-1">
+            <div id="images">
+                <div class="item" id="item1"></div>
+
+                <div id="sec-images">
+                    <div class="item" id="item2"></div>
+                    <div class="item" id="item3"></div>
+                    <div class="item" id="item4"></div>
+                    <div class="item" id="item5"></div>
+                </div>
+            </div>
+            
+            <div id="price-class-specs">
+                <div id="price">
+                    <h2>25,00€</h2>
+                    <div id="purchase-wishlist">
+                        <button id="purchase" (click)="addItemToShoppingCart()">
+                            <img src="../../assets/carrinho-de-compras.png">
+                            <p>PURCHASE</p>
+                        </button>
+<!--                          ../../assets/lista-de-desejos.png-->
+                        <app-add-to-wishlist-button></app-add-to-wishlist-button>
+                    </div>
+                </div>
+                <div id="classification">
+
+                    <h2>Classification</h2>
+                    <div id="class">
+                        <span id="class-value">4,5</span><span id="class-total">/5</span>
+                    </div>
+
+                </div>
+                <div id="specs">
+
+                    <h2>Specs</h2>
+
+                    <div id="info">
+                        <p>Type: Sandbox</p>
+                        <p>Platform: PC</p>
+                        <p>Languages: EN-EN, EN-US, PT-PT, FR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="container-2">
+            <div id="description">
+                <h2>Description</h2>
+            </div>
+            <div id="reviews">
+                <h2>Reviews</h2>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
