@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Item } from '../Item';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'app-item-details',
@@ -17,7 +18,8 @@ export class ItemDetailsComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private location: Location,
-        private itemService: ItemService
+        private itemService: ItemService,
+        private shoppingCartService : ShoppingCartService
         ) {}
 
     ngOnInit(): void {
@@ -36,5 +38,12 @@ export class ItemDetailsComponent implements OnInit {
 
     goBack(): void {
         this.location.back();
-      }
+    }
+
+    addItemToShoppingCart() {
+        console.log(this.item);
+        if (this.item) {
+            this.shoppingCartService.addItemToShoppingCart(this.item._id);
+        }
+    }
 }

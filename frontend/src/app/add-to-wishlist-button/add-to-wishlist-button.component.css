@@ -1,0 +1,26 @@
+button{
+  border-radius: 0.5em;
+  color:#e7e7e7;
+  background-color: #21A78F;
+  font-weight: bold;
+  border: none;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  padding: 0.7em ;
+  width: 100%;
+}
+button *{
+  margin: auto 0.1em;
+}
+
+button:hover{
+  background-image: linear-gradient(to left, #21A78F 0%, #35d0b2 100%);
+  cursor: pointer;
+}
+
+button:active{
+  background-image: linear-gradient(to left, #21A78F 0%, #4adac1 51%);
+}
+
+
