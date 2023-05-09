@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const UserModel = require("../models/user");
+const Item = require("../models/item")
 
 exports.getUser = (req, res) => {
     const user = User.findOne({ userName: req.params.userName });
@@ -43,6 +43,49 @@ exports.registerUser = (req, res, next) => {
         res.status(200).json({ message: "User registered successfully" });
       }
     });
+}
+
+
+exports.add_item_to_wishlist = (req, res, next) => {
+    User.findOne({name:req.params.user_name})
+        .exec((err,user) => {
+            if(err){
+                next(err);
+            }
+            if(!user){
+                res.status(404).json({succeeded: false, msg:"User doesn't exist"});
+                return;
+            }
+            for (let item of user.wish_items) { // check if this items is already on user's wishlist
+                if(item._id == req.body.item_id){
+                    res.status(409).json({succeeded: false, msg:"This item is already in the Wishlist"});
+                    return;
+                }
+            }
+            Item.findById(req.body.item_id, (err, item) =>{
+               if(err){
+                   return next(err);
+               }
+
+               if(!item){
+                   res.status(404).json({succeeded: false, msg:"This item doesn't exist"});
+                   return;
+
+               }
+               else{
+                   user.wish_items.push(req.body.item_id)
+
+                   User.findByIdAndUpdate(user._id,user,{},(err,old_user) =>{
+                       if (err) {
+                           return next(err);
+                       }
+                       
+                       res.json({succeeded: true, msg:"Item added successfully to Wishlist"});
+
+                   });
+               }
+            });
+        })
 }
 
 

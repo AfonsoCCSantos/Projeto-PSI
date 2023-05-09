@@ -23,7 +23,7 @@ export class UserService {
     return this.http.get<User>(url)
       .pipe(catchError( this.handleError<User>("Get user by name",undefined)));
   }
-  
+
   registerUser(user: User): Observable<boolean> {
     const url = `${this.userUrl}/register`;
     return this.http.post(url, user, { observe: 'response' }).pipe(
@@ -33,6 +33,13 @@ export class UserService {
       catchError((err) => {
         return of(false);
       })
+    );
+  }
+
+  add_item_to_wishlist(user_name : String, item_id : String) : Observable<any> {
+    let url = `${this.userUrl}/${user_name}/wishlist`;
+    return this.http.post<any>(url, {item_id:item_id}, this.httpOptions).pipe(
+      catchError(this.handleError<any>('add_item_to_wishlist',undefined))
     );
   }
 
