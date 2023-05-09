@@ -35,7 +35,7 @@
       <div class="wishlist">
         <h2 > Wishlist  </h2>
         <ul class="wishlist-items" *ngIf="user.wish_items && user.wish_items.length > 0">
-          <li *ngFor="let item of user.wish_items">
+          <li *ngFor="let item of wishlist">
             <img src="{{item.main_image}}" class="item_image" alt="{{item.name}} Photo">
             <p> {{item.name}}</p>
           </li>

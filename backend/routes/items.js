@@ -10,4 +10,6 @@ router.get('/search', item_controller.items_search_list);
 
 router.post('/', item_controller.add_item);
 
+router.get('/:id', item_controller.item_by_id);
+
 module.exports = router;
