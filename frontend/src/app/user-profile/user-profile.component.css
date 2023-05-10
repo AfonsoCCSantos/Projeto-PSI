@@ -31,9 +31,9 @@ ul {
 ul:not(.profile-stats-list) {
   overflow-y: auto;
   width: 18.75em;
-  height: 25em;
+  height: 26em;
   max-width: 25em;
-  max-height: 25em;
+  max-height: 26em;
 }
 
 .profile-stats li {
