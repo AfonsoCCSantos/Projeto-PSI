@@ -31,9 +31,9 @@ ul {
 ul:not(.profile-stats-list) {
   overflow-y: auto;
   width: 18.75em;
-  height: 25em;
+  height: 26em;
   max-width: 25em;
-  max-height: 25em;
+  max-height: 26em;
 }
 
 .profile-stats li {
@@ -85,7 +85,7 @@ ul:not(.profile-stats-list) {
 }
 
 .item_image {
-  width: 6.25em;
+  width: 8em;
   height: 6.25em;
   margin-right: 0.625em;
 }
