@@ -20,7 +20,7 @@ p span {
   padding: 2rem;
 }
 
-a {
+#cartWithItems {
   color: white;
   display: flex;
   margin: 0;

@@ -4,7 +4,7 @@
 <p>Your Shopping Cart <span>(Total Price: {{totalPrice}}€)</span></p>
 
 <div id="cartView" *ngIf="games">
-  <a *ngFor="let game of games">
+  <div id="cartWithItems" *ngFor="let game of games">
     <img src="{{game.main_image}}">
     <div class="gameDescription">
       <span>{{game.name}}</span>
@@ -26,9 +26,9 @@
         <button type="button"><span class="close">&times;</span></button>
       </span>
     </div>
-  </a>
+  </div>
 </div>
 
-<div *ngIf="games === undefined">
+<div id="emptyCart" *ngIf="games === undefined">
   Empty Cart!
 </div>
