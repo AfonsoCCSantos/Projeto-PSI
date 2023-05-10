@@ -20,6 +20,7 @@ import { FollowingComponent } from './following/following.component';
 import { AddToWishlistButtonComponent } from './add-to-wishlist-button/add-to-wishlist-button.component';
 import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view.component";
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {WishlistComponent} from "./wishlist/wishlist.component";
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ListsComponent,
     FollowersComponent,
     FollowingComponent,
+    WishlistComponent,
     AddToWishlistButtonComponent,
     ShoppingCartViewComponent,
     ShoppingCartComponent
