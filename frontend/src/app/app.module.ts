@@ -17,10 +17,10 @@ import { LibraryComponent } from './library/library.component';
 import { ListsComponent } from './lists/lists.component';
 import { FollowersComponent } from './followers/followers.component';
 import { FollowingComponent } from './following/following.component';
-import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddToWishlistButtonComponent } from './add-to-wishlist-button/add-to-wishlist-button.component';
 import {ShoppingCartViewComponent} from "./shopping-cart-view/shopping-cart-view.component";
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {WishlistComponent} from "./wishlist/wishlist.component";
 
 
 @NgModule({
