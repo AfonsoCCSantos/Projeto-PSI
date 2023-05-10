@@ -4,7 +4,7 @@ import { Injectable, EventEmitter } from '@angular/core';
   providedIn: 'root'
 })
 export class ShoppingCartService {
-    
+
     quantityUpdated: EventEmitter<number> = new EventEmitter();
 
     constructor() { }
@@ -42,7 +42,7 @@ export class ShoppingCartService {
             this.removeItemFromShoppingCart(itemId);
         } 
     }
-    
+
     countItemsInShoppingCart() : number{
         let numOfItems = 0;
         let currentItemsInShoppingCart = this.getItemsInShoppingCart();
