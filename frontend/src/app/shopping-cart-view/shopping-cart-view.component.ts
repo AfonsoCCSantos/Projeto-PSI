@@ -19,9 +19,9 @@ export class ShoppingCartViewComponent {
   ngOnInit() {
     /*So para testar*/
     // this.shoppingCartService.removeItemFromShoppingCart("64553a140e9cb42cbda729d9");
-    // this.shoppingCartService.addItemToShoppingCart("644bf9d023ef3a462196c92d");
-    // this.shoppingCartService.addItemToShoppingCart("644c01db032b9210a50a566c");
-    // this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");
+    this.shoppingCartService.addItemToShoppingCart("644bf9d023ef3a462196c92d");
+    this.shoppingCartService.addItemToShoppingCart("644c01db032b9210a50a566c");
+    this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");
     /*              */
 
     let theresItemsInCar = this.isThereItemsInCart();
@@ -37,7 +37,10 @@ export class ShoppingCartViewComponent {
 
   }
 
-  ngOnChange() {
+
+  public removeItem(itemId : string) {
+    this.shoppingCartService.removeItemFromShoppingCart(itemId);
+
     let theresItemsInCar = this.isThereItemsInCart();
 
     if (!theresItemsInCar) {
@@ -46,7 +49,6 @@ export class ShoppingCartViewComponent {
     }
 
     this.registerItemsInShoppingCart();
-
   }
 
   private isThereItemsInCart() : boolean {
