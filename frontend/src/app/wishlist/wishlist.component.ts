@@ -4,6 +4,7 @@ import {UserService} from "../user.service";
 import {User} from "../user";
 import {ItemService} from "../item.service";
 import {Item} from "../Item";
+import { ShoppingCartService } from '../shopping-cart.service';
 
 
 
@@ -18,7 +19,7 @@ export class WishlistComponent {
     private route: ActivatedRoute,
     private userService: UserService,
     private itemService: ItemService,
-
+    private shoppingCartService: ShoppingCartService
   ) {}
 
   user: User | undefined;
@@ -41,6 +42,11 @@ export class WishlistComponent {
         this.wishlist.push(item);
       })
     }
+  }
+
+  addItemToCart(itemId: string) {
+    this.shoppingCartService.addItemToShoppingCart(itemId);
+    console.log(localStorage.getItem('shoppingCartItems'))
   }
 
 }
