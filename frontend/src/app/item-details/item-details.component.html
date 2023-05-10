@@ -13,18 +13,13 @@
                     <div class="item" *ngFor="let image of item.sec_images">
                         <img src="{{image}}">
                     </div>
-                    <div *ngIf="item.video_link">
-                        <div class="item" id="video">
-                            <iframe width="560" height="315" src="{{item.video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
                 </div>
                 
             </div>
             
             <div id="price-class-specs">
                 <div id="price">
-                    <h2>25,00€</h2>
+                    <h2>{{this.item.price}}€</h2>
                     <div id="purchase-wishlist">
                         <button id="purchase" (click)="addItemToShoppingCart()">
                             <img src="../../assets/carrinho-de-compras.png">
@@ -38,7 +33,7 @@
 
                     <h2>Classification</h2>
                     <div id="class">
-                        <span id="class-value">4,5</span><span id="class-total">/5</span>
+                        <span id="class-value">{{item.classification}}</span><span id="class-total">/5</span>
                     </div>
 
                 </div>
@@ -47,16 +42,26 @@
                     <h2>Specs</h2>
 
                     <div id="info">
-                        <p>Type: Sandbox</p>
-                        <p>Platform: PC</p>
-                        <p>Languages: EN-EN, EN-US, PT-PT, FR</p>
+                        <p>Type: {{item.type}}</p>
+                        <p>Platform: {{item.platform}}</p>
+                        <p>Languages: {{item_languages}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div id="container-2">
+            <div id="trailer" *ngIf="item.video_link">
+                <h2>Trailer</h2>
+                <div id="video">
+                    <iframe [src]="video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
             <div id="description">
                 <h2>Description</h2>
+                <div id="texto">
+                    <p>{{item.description}}</p>
+                </div>
             </div>
             <div id="reviews">
                 <h2>Reviews</h2>

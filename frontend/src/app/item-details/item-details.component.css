@@ -44,7 +44,7 @@ body {
 .sec-images {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-left: 1.1em;
 }
 
@@ -57,8 +57,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-
 
 #item1 {
     height: 17em;
@@ -219,10 +217,12 @@ body {
 
 #description {
     width: 45.3em;
-    height: 15em;
+    height: auto;
     background-color: #39433E;
     border-radius: 0.5em;
     padding: 1.5em;
+    margin-top: 3em;
+    
 }
 
 #reviews {
@@ -255,4 +255,37 @@ body {
 
 .item img {
     width: 100%;
+}
+
+#trailer > h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0;
+}
+
+#trailer {
+    width: 45.3em;
+    height: 22em;
+    background-color: #39433E;
+    border-radius: 0.5em;
+    padding: 1.5em;
+}
+
+#video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+#texto > p {
+    word-wrap: break-word;
+    color: white;
+    margin-left: 2em;
+}
+
+#video > iframe {
+    width: 40em;
+    height: 17em;
 }

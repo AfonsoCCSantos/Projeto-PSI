@@ -3,7 +3,7 @@ export interface Item {
     type: string;
     name: string;
     description: string;
-    plataform: string;
+    platform: string;
     languages: [string];
     price: number;
     classification: number;
