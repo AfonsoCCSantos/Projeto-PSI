@@ -1,18 +1,25 @@
-<div class="container">
+<div class="container" *ngIf="item">
     <div id="background">
     <div id="content">
         <h1>Minecraft</h1>
 
         <div id="container-1">
             <div id="images">
-                <div class="item" id="item1"></div>
-
-                <div id="sec-images">
-                    <div class="item" id="item2"></div>
-                    <div class="item" id="item3"></div>
-                    <div class="item" id="item4"></div>
-                    <div class="item" id="item5"></div>
+                <div class="item" id="item1">
+                    <img src="{{item.main_image}}">
                 </div>
+
+                <div class="sec-images">
+                    <div class="item" *ngFor="let image of item.sec_images">
+                        <img src="{{image}}">
+                    </div>
+                    <div *ngIf="item.video_link">
+                        <div class="item" id="video">
+                            <iframe width="560" height="315" src="{{item.video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             
             <div id="price-class-specs">

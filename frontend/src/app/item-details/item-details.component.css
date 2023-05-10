@@ -41,7 +41,7 @@ body {
     padding: 1em;
 }
 
-#sec-images {
+.sec-images {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -53,7 +53,12 @@ body {
     height: 3.7em;
     width: 3.7em;
     border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 #item1 {
     height: 17em;
@@ -241,4 +246,13 @@ body {
     font-weight: 400;
     font-size: 1em;
     margin: 0;
+}
+
+#item1 img {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+.item img {
+    width: 100%;
 }

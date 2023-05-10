@@ -9,6 +9,6 @@ export interface Item {
     classification: number;
     comments: [string];
     main_image: string;
-    sec_image: [string];
+    sec_images: [string];
     video_link: string;
 }

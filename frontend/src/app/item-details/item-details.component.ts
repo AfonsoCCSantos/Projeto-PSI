@@ -33,7 +33,10 @@ export class ItemDetailsComponent implements OnInit {
             id = '';
 
         this.itemService.getItem(id)
-            .subscribe(item => this.item = item);
+            .subscribe(item => {
+                this.item = item;
+                console.log(item);
+            });
     }
 
     goBack(): void {
