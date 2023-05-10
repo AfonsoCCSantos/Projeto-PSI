@@ -18,7 +18,7 @@ export class ShoppingCartViewComponent {
 
   ngOnInit() {
     /*So para testar*/
-    this.shoppingCartService.removeItemFromShoppingCart("644bf9d023ef3a462196c92d");
+    // this.shoppingCartService.removeItemFromShoppingCart("64553a140e9cb42cbda729d9");
     // this.shoppingCartService.addItemToShoppingCart("644bf9d023ef3a462196c92d");
     // this.shoppingCartService.addItemToShoppingCart("644c01db032b9210a50a566c");
     // this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");

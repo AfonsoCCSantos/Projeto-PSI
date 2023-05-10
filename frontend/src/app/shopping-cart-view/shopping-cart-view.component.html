@@ -6,12 +6,12 @@
 <div id="cartView" *ngIf="games">
   <div id="cartWithItems" *ngFor="let game of games">
     <img src="{{game.main_image}}">
-    <div class="gameDescription">
-      <span>{{game.name}}</span>
-      <span><span>Type:</span> {{game.type}}</span>
-      <span><span>Price:</span> {{game.price}}€</span>
-      <span><span>Quantity:</span> {{itemsInCart[game._id]}} Unit(s)</span>
-    </div>
+    <ul class="gameDescription">
+      <li>{{game.name}}</li>
+      <li><span>Type:</span> {{game.type}}</li>
+      <li><span>Price:</span> {{game.price}}€</li>
+      <li><span>Quantity:</span> {{itemsInCart[game._id]}} Unit(s)</li>
+    </ul>
     <div id="alterItems">
       <div id="alterQt">
           <span>
@@ -30,5 +30,5 @@
 </div>
 
 <div id="emptyCart" *ngIf="games === undefined">
-  Empty Cart!
+  (Empty Cart!)
 </div>
