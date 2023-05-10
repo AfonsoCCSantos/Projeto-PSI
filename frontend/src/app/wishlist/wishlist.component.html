@@ -17,10 +17,8 @@
         <div class="game-price-buy">
           <p class="price"> {{item.price}}€</p>
           <div class="buttons">
-            <button type="button" > Add to Cart </button>
-            <button type="button" routerLink="/item/{{item._id}}"> Open Item </button>
             <button type="button" (click)="addItemToCart(item._id)" > Add to Cart </button>
-            <button type="button" > Open Item </button>
+            <button type="button" routerLink="/item/{{item._id}}"> Open Item </button>
           </div>
         </div>
       </li>
