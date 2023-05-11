@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ItemService } from '../item.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Item } from '../Item';
@@ -20,7 +20,8 @@ export class ItemDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private itemService: ItemService,
-    private shoppingCartService : ShoppingCartService
+    private shoppingCartService : ShoppingCartService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -60,16 +61,21 @@ export class ItemDetailsComponent implements OnInit {
   showMessage($event :any){
     let information_window = document.getElementById("information-window")!;
     let message = document.getElementById("message")!;
+    let overlay = document.getElementById("overlay")!;
+    overlay.style.opacity = "1";
     information_window.classList.add("active");
     message.textContent = $event.msg;
   }
 
   hideWindow(){
     let information_window = document.getElementById("information-window")!;
+    let overlay = document.getElementById("overlay")!;
+    overlay.style.opacity = "0";
     information_window.classList.remove("active");
   }
 
   goToUsersWishlist(){
-
+    this.router.navigate(["wishlist",this.user])
   }
+
 }
