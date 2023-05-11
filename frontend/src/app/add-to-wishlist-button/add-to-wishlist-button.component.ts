@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../user.service";
 
 @Component({
@@ -13,8 +13,12 @@ export class AddToWishlistButtonComponent {
   constructor(
     private user_service: UserService,
     private route: ActivatedRoute,
+    private router: Router,
   ) {}
   add_item_to_wish_list(){
+    if (!localStorage.getItem("user_name") && !sessionStorage.getItem("user_name")){
+      this.router.navigate(["login"]);
+    }
     let item_id = this.route.snapshot.paramMap.get("id")
     let username = localStorage.getItem("user_name")
     if(!username){
