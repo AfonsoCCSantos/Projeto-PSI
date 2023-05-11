@@ -17,31 +17,8 @@ export class ShoppingCartViewComponent {
   constructor(private itemService : ItemService, private shoppingCartService : ShoppingCartService) {}
 
   ngOnInit() {
-    /*So para testar*/
-    // this.shoppingCartService.removeItemFromShoppingCart("64553a140e9cb42cbda729d9");
-    this.shoppingCartService.addItemToShoppingCart("644bf9d023ef3a462196c92d");
-    this.shoppingCartService.addItemToShoppingCart("644c01db032b9210a50a566c");
-    this.shoppingCartService.addItemToShoppingCart("64553a140e9cb42cbda729d9");
-    /*              */
+    let theresItemsInCar = this.areThereItemsInCart();
 
-    let theresItemsInCar = this.isThereItemsInCart();
-
-    if (!theresItemsInCar) {
-      this.games = undefined;
-      return;
-    }
-
-    this.registerItemsInShoppingCart();
-    console.log(this.games)
-
-
-  }
-
-
-  public removeItem(itemId : string) {
-    this.shoppingCartService.removeItemFromShoppingCart(itemId);
-
-    let theresItemsInCar = this.isThereItemsInCart();
 
     if (!theresItemsInCar) {
       this.games = undefined;
@@ -51,7 +28,19 @@ export class ShoppingCartViewComponent {
     this.registerItemsInShoppingCart();
   }
 
-  private isThereItemsInCart() : boolean {
+  ngOnChange() {
+    let theresItemsInCar = this.areThereItemsInCart();
+
+
+    if (!theresItemsInCar) {
+      this.games = undefined;
+      return;
+    }
+
+    this.registerItemsInShoppingCart();
+  }
+
+  private areThereItemsInCart() : boolean {
     let shoppingCartItems = localStorage.getItem('shoppingCartItems');
 
     if (shoppingCartItems == null) {
@@ -68,6 +57,27 @@ export class ShoppingCartViewComponent {
     }
 
     return true;
+  }
+
+  removeItemFromShoppingCart(itemId: string) {
+    this.shoppingCartService.removeItemFromShoppingCart(itemId);
+    this.ngOnChange();
+  }
+
+  increaseQuantityOfItem(itemId: string) {
+    this.shoppingCartService.increaseQuantityOfItemInShoppingCart(itemId);
+    this.itemsInCart[itemId] = this.itemsInCart[itemId] + 1;
+  }
+
+  decreaseQuantityOfItem(itemId: string) {
+    this.shoppingCartService.decreaseQuantityOfItemInShoppingCart(itemId);
+    let decreasedQuantity = this.itemsInCart[itemId] - 1;
+    if (decreasedQuantity == 0) {
+      this.removeItemFromShoppingCart(itemId);
+    }
+    else {
+      this.itemsInCart[itemId] = decreasedQuantity;
+    }
   }
 
   private registerItemsInShoppingCart() {
