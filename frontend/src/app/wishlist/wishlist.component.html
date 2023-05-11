@@ -1,0 +1,27 @@
+<app-app-header></app-app-header>
+<div class="wishlist">
+
+  <div class = "profile-info" *ngIf="user">
+    <img class="profile-image" src="{{user.image}}" alt="Profile Picture">
+    <h2>{{user.name | uppercase}} Wishlist</h2>
+  </div>
+
+  <div class="wishlist-display">
+    <ul>
+      <li *ngFor="let item of wishlist">
+        <img class="item-image" src="{{item.main_image}}" alt="Profile Picture">
+        <h2 class="game-name"> {{item.name}}</h2>
+        <p class="game-type"> Game Type: {{item.type}}</p>
+        <p class="game-platform"> Plataform: {{item.platform}}</p>
+        <p class="game-classification"> Classification: {{item.classification}}</p>
+        <div class="game-price-buy">
+          <p class="price"> {{item.price}}€</p>
+          <div class="buttons">
+            <button type="button" (click)="addItemToCart(item._id)" > Add to Cart </button>
+            <button type="button" routerLink="/item/{{item._id}}"> Open Item </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

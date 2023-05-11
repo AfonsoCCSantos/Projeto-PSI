@@ -19,6 +19,7 @@ export class ShoppingCartViewComponent {
   ngOnInit() {
     let theresItemsInCar = this.areThereItemsInCart();
 
+
     if (!theresItemsInCar) {
       this.games = undefined;
       return;
@@ -30,13 +31,13 @@ export class ShoppingCartViewComponent {
   ngOnChange() {
     let theresItemsInCar = this.areThereItemsInCart();
 
+
     if (!theresItemsInCar) {
       this.games = undefined;
       return;
     }
 
     this.registerItemsInShoppingCart();
-
   }
 
   private areThereItemsInCart() : boolean {

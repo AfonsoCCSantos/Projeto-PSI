@@ -37,6 +37,10 @@ export class ShoppingCartService {
     decreaseQuantityOfItemInShoppingCart(itemId: string) {
         this.updateQuantityOfItemInShoppingCart(itemId, -1);
         this.quantityUpdated.emit(-1);
+        let currentItemsInShoppingCart = this.getItemsInShoppingCart();
+        if (currentItemsInShoppingCart[itemId] == 0) {
+            this.removeItemFromShoppingCart(itemId);
+        } 
     }
 
     countItemsInShoppingCart() : number{
