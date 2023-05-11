@@ -46,4 +46,8 @@ export class ItemDetailsComponent implements OnInit {
             this.shoppingCartService.addItemToShoppingCart(this.item._id);
         }
     }
+
+    showMessage($event :any){
+      console.log($event)
+    }
 }
