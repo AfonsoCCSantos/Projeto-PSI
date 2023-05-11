@@ -13,53 +13,63 @@ import { ShoppingCartService } from '../shopping-cart.service';
 })
 export class ItemDetailsComponent implements OnInit {
 
-    @Input() item?: Item;
+  @Input() item?: Item;
+  user : string | undefined;
 
-    constructor(
-        private route: ActivatedRoute,
-        private location: Location,
-        private itemService: ItemService,
-        private shoppingCartService : ShoppingCartService
-        ) {}
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private itemService: ItemService,
+    private shoppingCartService : ShoppingCartService
+  ) {}
 
-    ngOnInit(): void {
-        this.getItem();
+  ngOnInit(): void {
+    this.getItem();
+    let logged_user = localStorage.getItem("user_name");
+    if (logged_user){
+      this.user = logged_user;
+      return;
     }
-
-    getItem(): void {
-        let id = this.route.snapshot.paramMap.get('id');
-
-        if (!id)
-            id = '';
-
-        this.itemService.getItem(id)
-            .subscribe(item => this.item = item);
+    logged_user = sessionStorage.getItem("user_name");
+    if (logged_user) {
+      this.user = logged_user;
     }
+  }
 
-    goBack(): void {
-        this.location.back();
+  getItem(): void {
+    let id = this.route.snapshot.paramMap.get('id');
+
+    if (!id)
+      id = '';
+
+    this.itemService.getItem(id)
+      .subscribe(item => this.item = item);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  addItemToShoppingCart() {
+    console.log(this.item);
+    if (this.item) {
+      this.shoppingCartService.addItemToShoppingCart(this.item._id);
     }
+  }
 
-    addItemToShoppingCart() {
-        console.log(this.item);
-        if (this.item) {
-            this.shoppingCartService.addItemToShoppingCart(this.item._id);
-        }
-    }
+  showMessage($event :any){
+    let information_window = document.getElementById("information-window")!;
+    let message = document.getElementById("message")!;
+    information_window.classList.add("active");
+    message.textContent = $event.msg;
+  }
 
-    showMessage($event :any){
-      let information_window = document.getElementById("information-window")!;
-      let message = document.getElementById("message")!;
-      information_window.classList.add("active");
-      message.textContent = $event.msg;
-    }
+  hideWindow(){
+    let information_window = document.getElementById("information-window")!;
+    information_window.classList.remove("active");
+  }
 
-    hideWindow(){
-      let information_window = document.getElementById("information-window")!;
-      information_window.classList.remove("active");
-    }
+  goToUsersWishlist(){
 
-    goToUsersWishlist(){
-
-    }
+  }
 }
