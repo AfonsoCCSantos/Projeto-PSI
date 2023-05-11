@@ -17,7 +17,7 @@ export class ShoppingCartViewComponent {
   constructor(private itemService : ItemService, private shoppingCartService : ShoppingCartService) {}
 
   ngOnInit() {
-    let theresItemsInCar = this.isThereItemsInCart();
+    let theresItemsInCar = this.areThereItemsInCart();
 
     if (!theresItemsInCar) {
       this.games = undefined;
@@ -25,11 +25,10 @@ export class ShoppingCartViewComponent {
     }
 
     this.registerItemsInShoppingCart();
-    console.log(this.games)
   }
 
   ngOnChange() {
-    let theresItemsInCar = this.isThereItemsInCart();
+    let theresItemsInCar = this.areThereItemsInCart();
 
     if (!theresItemsInCar) {
       this.games = undefined;
@@ -40,7 +39,7 @@ export class ShoppingCartViewComponent {
 
   }
 
-  private isThereItemsInCart() : boolean {
+  private areThereItemsInCart() : boolean {
     let shoppingCartItems = localStorage.getItem('shoppingCartItems');
 
     if (shoppingCartItems == null) {
@@ -76,7 +75,7 @@ export class ShoppingCartViewComponent {
       this.removeItemFromShoppingCart(itemId);
     }
     else {
-      this.itemsInCart[itemId] = decreasedQuantity; 
+      this.itemsInCart[itemId] = decreasedQuantity;
     }
   }
 
