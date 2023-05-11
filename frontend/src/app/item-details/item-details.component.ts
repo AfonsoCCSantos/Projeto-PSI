@@ -48,6 +48,18 @@ export class ItemDetailsComponent implements OnInit {
     }
 
     showMessage($event :any){
-      console.log($event)
+      let information_window = document.getElementById("information-window")!;
+      let message = document.getElementById("message")!;
+      information_window.classList.add("active");
+      message.textContent = $event.msg;
+    }
+
+    hideWindow(){
+      let information_window = document.getElementById("information-window")!;
+      information_window.classList.remove("active");
+    }
+
+    goToUsersWishlist(){
+
     }
 }

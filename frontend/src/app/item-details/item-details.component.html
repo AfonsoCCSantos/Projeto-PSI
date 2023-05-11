@@ -1,4 +1,6 @@
 <div class="container">
+  <div id="overlay"></div>
+
     <div id="background">
     <div id="content">
         <h1>Minecraft</h1>
@@ -26,6 +28,13 @@
                         <app-add-to-wishlist-button (show_message_event) = "showMessage($event)">
                         </app-add-to-wishlist-button>
                     </div>
+                  <div id="information-window">
+                    <span id="message">Lorem50</span>
+                    <div id="button-container">
+                      <button (click)="hideWindow()">Back</button>
+                      <button (click)="goToUsersWishlist()">View Wishlist</button>
+                    </div>
+                  </div>
                 </div>
                 <div id="classification">
 
