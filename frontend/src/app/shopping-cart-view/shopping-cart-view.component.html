@@ -15,15 +15,15 @@
     <div id="alterItems">
       <div id="alterQt">
           <span>
-            <button type="button"><i class="fa fa-angle-up"></i></button>
+            <button type="button" (click)="increaseQuantityOfItem(game._id)"><i class="fa fa-angle-up"></i></button>
           </span>
           <span>{{itemsInCart[game._id]}}</span>
         <span>
-            <button type="button"><i class="fa fa-angle-down"></i></button>
+            <button type="button" (click)="decreaseQuantityOfItem(game._id)"><i class="fa fa-angle-down"></i></button>
           </span>
       </div>
       <span id="deleteItem">Delete Item
-        <button type="button"><span class="close">&times;</span></button>
+        <button type="button" (click)="removeItemFromShoppingCart(game._id)"><span class="close">&times;</span></button>
       </span>
     </div>
   </div>
