@@ -7,7 +7,7 @@
   </div>
 
   <div class="wishlist-display">
-    <ul>
+    <ul *ngIf="this.user && this.user.wish_items &&this.user.wish_items.length > 0">
       <li *ngFor="let item of wishlist">
         <img class="item-image" src="{{item.main_image}}" alt="Profile Picture">
         <h2 class="game-name"> {{item.name}}</h2>
@@ -25,5 +25,6 @@
         </div>
       </li>
     </ul>
+    <h2 *ngIf="this.user && this.user.wish_items && this.user.wish_items.length < 1" id="no-items"> 0 Items in this Wishlist</h2>
   </div>
 </div>

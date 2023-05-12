@@ -141,3 +141,8 @@ li .item-image {
   background-image: linear-gradient(to right, #009FFD, #42378F);;
   border-radius: 0.3125em;
 }
+
+#no-items{
+  padding-left: 25%;
+  padding-top: 25%;
+}
