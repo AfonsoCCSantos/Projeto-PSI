@@ -68,7 +68,6 @@ goBack(): void {
 }
 
 addItemToShoppingCart() {
-  console.log(this.item);
   if (this.item) {
     this.shoppingCartService.addItemToShoppingCart(this.item._id);
   }

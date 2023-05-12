@@ -13,11 +13,17 @@ export class ShoppingCartService {
         let currentItemsInShoppingCart = this.getItemsInShoppingCart();
         if (!currentItemsInShoppingCart) { //There were no items in the shopping cart
             currentItemsInShoppingCart = {[itemId]: 1}
+            localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
         }
         else { //There were already items in the shopping cart
-            currentItemsInShoppingCart[itemId] = 1;
+            if (currentItemsInShoppingCart.hasOwnProperty(itemId)) {
+                this.increaseQuantityOfItemInShoppingCart(itemId);
+            }
+            else {
+                currentItemsInShoppingCart[itemId] = 1;
+                localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
+            }
         }
-        localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
         this.quantityUpdated.emit(1);
     }
 
