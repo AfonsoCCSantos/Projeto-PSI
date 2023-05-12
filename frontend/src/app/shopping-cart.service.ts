@@ -26,7 +26,9 @@ export class ShoppingCartService {
         let numOfItems = currentItemsInShoppingCart[itemId];
         delete currentItemsInShoppingCart[itemId];
         localStorage.setItem('shoppingCartItems', JSON.stringify(currentItemsInShoppingCart));
-        this.quantityUpdated.emit(-numOfItems);
+        if (numOfItems !== undefined) {
+            this.quantityUpdated.emit(-numOfItems);
+        }
     }
 
     increaseQuantityOfItemInShoppingCart(itemId: string) {
