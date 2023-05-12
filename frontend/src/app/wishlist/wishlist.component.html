@@ -12,15 +12,13 @@
         <img class="item-image" src="{{item.main_image}}" alt="Profile Picture">
         <h2 class="game-name"> {{item.name}}</h2>
         <p class="game-type"> Game Type: {{item.type}}</p>
-        <p class="game-platform"> Plataform: {{item.plataform}}</p>
+        <p class="game-platform"> Plataform: {{item.platform}}</p>
         <p class="game-classification"> Classification: {{item.classification}}</p>
         <div class="game-price-buy">
           <p class="price"> {{item.price}}€</p>
           <div class="buttons">
-            <button type="button" > Add to Cart </button>
-            <button type="button" routerLink="/item/{{item._id}}"> Open Item </button>
             <button type="button" (click)="addItemToCart(item._id)" > Add to Cart </button>
-            <button type="button" > Open Item </button>
+            <button type="button" routerLink="/item/{{item._id}}"> Open Item </button>
           </div>
         </div>
       </li>

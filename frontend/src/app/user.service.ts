@@ -16,6 +16,12 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+  add_item_to_wishlist(user_name : String, item_id : String) : Observable<any> {
+    let url = `${this.userUrl}/${user_name}/wishlist`;
+    return this.http.post<any>(url, {item_id:item_id}, this.httpOptions).pipe(
+        catchError(error =>  of(error.error))); // getting json to still send it
+  }
+
   constructor(private http: HttpClient) { }
 
   getUserByName(username: string): Observable<User> {
@@ -33,13 +39,6 @@ export class UserService {
       catchError((err) => {
         return of(false);
       })
-    );
-  }
-
-  add_item_to_wishlist(user_name : String, item_id : String) : Observable<any> {
-    let url = `${this.userUrl}/${user_name}/wishlist`;
-    return this.http.post<any>(url, {item_id:item_id}, this.httpOptions).pipe(
-      catchError(this.handleError<any>('add_item_to_wishlist',undefined))
     );
   }
 
