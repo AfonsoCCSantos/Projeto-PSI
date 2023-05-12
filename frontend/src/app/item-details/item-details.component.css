@@ -33,12 +33,13 @@ body {
 }
 
 #images {
-    width: 22em;
+    min-width: 17em;
+    max-width: 22em;
     height: 17em;
     background-color: #39433E;
     border-radius: 0.5em;
-    display: flex;
     padding: 1em;
+    display: flex;
 }
 
 .sec-images {
@@ -60,12 +61,13 @@ body {
 
 #item1 {
     height: 17em;
-    width: 17em;
+    min-width: 17em;
 }
 
 #container-1 {
     display: flex;
     max-height: 19em;
+    justify-content: space-between;
 }
 
 #price-class-specs {
