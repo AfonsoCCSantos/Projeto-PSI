@@ -1,4 +1,6 @@
 <div class="container" *ngIf="item">
+  <div id="overlay"></div>
+
     <div id="background">
     <div id="content">
         <h1>Minecraft</h1>
@@ -14,9 +16,9 @@
                         <img src="{{image}}">
                     </div>
                 </div>
-                
+
             </div>
-            
+
             <div id="price-class-specs">
                 <div id="price">
                     <h2>{{this.item.price}}€</h2>
@@ -25,9 +27,16 @@
                             <img src="../../assets/carrinho-de-compras.png">
                             <p>PURCHASE</p>
                         </button>
-<!--                          ../../assets/lista-de-desejos.png-->
-                        <app-add-to-wishlist-button></app-add-to-wishlist-button>
+                        <app-add-to-wishlist-button (show_message_event) = "showMessage($event)">
+                        </app-add-to-wishlist-button>
                     </div>
+                  <div id="information-window">
+                    <span id="message">Lorem50</span>
+                    <div id="button-container">
+                      <button (click)="hideWindow()">Back</button>
+                      <button (click)="goToUsersWishlist()">View Wishlist</button>
+                    </div>
+                  </div>
                 </div>
                 <div id="classification">
 
