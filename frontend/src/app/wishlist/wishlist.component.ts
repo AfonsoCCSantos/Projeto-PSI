@@ -27,6 +27,11 @@ export class WishlistComponent {
 
   ngOnInit(): void {
     this.getUser();
+    const routeParams = this.route.snapshot.params;
+    this.route.params.subscribe(routeParams => {
+      this.getUser();
+    });
+
   }
 
   getUser(): void {
