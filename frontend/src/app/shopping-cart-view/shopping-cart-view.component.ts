@@ -28,18 +28,6 @@ export class ShoppingCartViewComponent {
     this.registerItemsInShoppingCart();
   }
 
-  ngOnChange() {
-    let theresItemsInCar = this.areThereItemsInCart();
-
-
-    if (!theresItemsInCar) {
-      this.games = undefined;
-      return;
-    }
-
-    this.registerItemsInShoppingCart();
-  }
-
   private areThereItemsInCart() : boolean {
     let shoppingCartItems = localStorage.getItem('shoppingCartItems');
 
@@ -61,7 +49,7 @@ export class ShoppingCartViewComponent {
 
   removeItemFromShoppingCart(itemId: string) {
     this.shoppingCartService.removeItemFromShoppingCart(itemId);
-    this.ngOnChange();
+    this.ngOnInit();
   }
 
   increaseQuantityOfItem(itemId: string) {
