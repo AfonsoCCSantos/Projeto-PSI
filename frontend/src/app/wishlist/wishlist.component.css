@@ -85,6 +85,11 @@ li .game-classification{
   text-align: left;
   margin-left: 1em;
 }
+
+#game-classification-result{
+  font-size: 1.5em;
+}
+
 li .game-price-buy{
   display: flex;
   flex-direction: row;
