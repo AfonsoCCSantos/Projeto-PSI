@@ -49,8 +49,10 @@ export class ShoppingCartViewComponent {
 
   removeItemFromShoppingCart(itemId: string) {
     this.shoppingCartService.removeItemFromShoppingCart(itemId);
-    this.ngOnInit();
+    if (this.games)
+      this.games = this.games.filter(function(currItem){return itemId != currItem._id;});
   }
+
 
   increaseQuantityOfItem(itemId: string) {
     this.shoppingCartService.increaseQuantityOfItemInShoppingCart(itemId);
