@@ -43,6 +43,12 @@ li {
   list-style: none;
 }
 
+li a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: white;
+}
+
 li span {
   color: #8D8DAA;
 }

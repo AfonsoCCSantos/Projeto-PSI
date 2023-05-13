@@ -7,7 +7,7 @@
   <div id="cartWithItems" *ngFor="let game of games">
     <img src="{{game.main_image}}">
     <ul class="gameDescription">
-      <li>{{game.name}}</li>
+      <li><a routerLink="/item/{{game._id}}">{{game.name}}</a></li>
       <li><span>Type:</span> {{game.type}}</li>
       <li><span>Price:</span> {{game.price}}€</li>
       <li><span>Quantity:</span> {{itemsInCart[game._id]}} Unit(s)</li>
