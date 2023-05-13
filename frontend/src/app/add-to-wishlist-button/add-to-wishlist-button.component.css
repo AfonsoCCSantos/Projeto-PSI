@@ -1,7 +1,7 @@
 button{
   border-radius: 0.5em;
   color:#e7e7e7;
-  background-color: #21A78F;
+  background-color: #1a65f1;
   font-weight: bold;
   border: none;
   font-size: 0.9em;
@@ -15,12 +15,12 @@ button *{
 }
 
 button:hover{
-  background-image: linear-gradient(to left, #21A78F 0%, #35d0b2 100%);
+  background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 100%);
   cursor: pointer;
 }
 
 button:active{
-  background-image: linear-gradient(to left, #21A78F 0%, #4adac1 51%);
+  background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 51%);
 }
 
 

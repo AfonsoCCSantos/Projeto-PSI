@@ -27,7 +27,13 @@ export class ItemDetailsComponent implements OnInit {
         ) {}
 
     ngOnInit(): void {
-        this.getItem();
+        const routeParams = this.route.snapshot.params;
+        
+        this.route.params.subscribe(routeParams => {
+            this.item_languages = "";
+            this.video = "";
+            this.getItem();
+        });
     }
 
     getItem(): void {
