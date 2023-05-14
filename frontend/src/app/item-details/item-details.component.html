@@ -13,7 +13,7 @@
                     <img src="{{item.main_image}}">
                 </div>
 
-                <div class="sec-images" *ngIf="item.sec_images.length > 1">
+                <div class="sec-images" *ngIf="item.sec_images.length > 0">
                     <div class="item" *ngFor="let image of item.sec_images">
                         <img src="{{image}}">
                     </div>
