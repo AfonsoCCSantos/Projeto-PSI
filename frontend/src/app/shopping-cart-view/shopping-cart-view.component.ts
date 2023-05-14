@@ -67,7 +67,7 @@ export class ShoppingCartViewComponent {
     else {
       this.itemsInCart[itemId] = decreasedQuantity;
       this.itemService.getItem(itemId).subscribe(item => {
-        this.totalPrice -= item.price;
+        this.totalPrice = this.totalPrice == 0 ? 0 : this.totalPrice -= item.price;
       });
     }
   }
@@ -89,7 +89,10 @@ export class ShoppingCartViewComponent {
   }
 
   removeGameFromArray(itemId: string) {
-    this.games?.splice(this.games.findIndex(item => item._id = itemId), 1);
+    this.games?.splice(this.games.findIndex(item => item._id === itemId), 1);
+    if (this.games?.length === 0) {
+      this.games = undefined;
+    }
   }
 
   updateTotalPrice() {
