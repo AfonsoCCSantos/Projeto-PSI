@@ -14,7 +14,7 @@ body {
 }
 
 #content {
-    background-color: #232926;
+    background-color: #1b2323;
     max-width: 90em;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
@@ -36,7 +36,7 @@ body {
     min-width: 17em;
     max-width: 22em;
     height: 17em;
-    background-color: #39433E;
+    background-color: #414a4c;
     border-radius: 0.5em;
     padding: 1em;
     display: flex;
@@ -82,7 +82,7 @@ body {
 }
 
 #price-class-specs > * {
-    background-color: #39433E;
+    background-color: #414a4c;
     border-radius: 0.5em;
     padding: 0.7em;
 }
@@ -115,7 +115,7 @@ body {
 
 #purchase-wishlist > * {
     border-radius: 0.5em;
-    background-color: #21A78F;
+    background-color: #1a65f1;
 }
 
 #purchase {
@@ -131,12 +131,12 @@ body {
 }
 
 #purchase:hover{
-    background-image: linear-gradient(to left, #21A78F 0%, #35d0b2 100%);
+    background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 100%);
     cursor: pointer;
 }
 
 #purchase:active{
-    background-image: linear-gradient(to left, #21A78F 0%, #4adac1 51%);
+    background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 51%);
 }
 
 
@@ -172,7 +172,7 @@ body {
 }
 
 #class {
-    color: #21A78F;
+    color: #1a65f1;
     display: flex;
     justify-content: center;
     margin-top: 2em;
@@ -220,20 +220,19 @@ body {
 #description {
     width: 45.3em;
     height: auto;
-    background-color: #39433E;
+    background-color: #414a4c;
     border-radius: 0.5em;
     padding: 1.5em;
     margin-top: 3em;
-
 }
 
 #reviews {
     width: 45.3em;
-    height: 15em;
-    background-color: #39433E;
+    height: auto;
+    background-color: #414a4c;
     border-radius: 0.5em;
-    margin-top: 3em;
     padding: 1.5em;
+    margin-top: 3em;
 }
 
 #description > h2 {
@@ -268,8 +267,8 @@ body {
 
 #trailer {
     width: 45.3em;
-    height: 22em;
-    background-color: #39433E;
+    height: auto;
+    background-color: #414a4c;
     border-radius: 0.5em;
     padding: 1.5em;
 }
@@ -360,4 +359,43 @@ button:hover{
 
 button:active{
   background-image: linear-gradient(to left, #21A78F 0%, #4adac1 51%);
+}
+#img-name {
+    display: flex;
+    align-items: center;
+}
+
+#img-name img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#img-name span {
+    color: white;
+    margin-left: 0.5em;
+}
+
+#has-reviews p {
+    color: white;
+    margin-left: 2em;
+}
+
+#has-reviews {
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+#no-reviews p {
+    color: white;
+    margin-left: 2em;
+}
+
+#no-reviews {
+    margin-top: 1em;
+}
+
+#trailer p {
+    color: white;
+    margin-top: 1em;
+    margin-left: 2em;
 }
