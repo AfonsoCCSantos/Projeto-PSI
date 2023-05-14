@@ -18,25 +18,19 @@ export class ShoppingCartViewComponent {
 
   ngOnInit() {
     let theresItemsInCar = this.areThereItemsInCart();
-
-
     if (!theresItemsInCar) {
       this.games = undefined;
       return;
     }
-
     this.registerItemsInShoppingCart();
   }
 
   private areThereItemsInCart() : boolean {
     let shoppingCartItems = localStorage.getItem('shoppingCartItems');
-
     if (shoppingCartItems == null) {
       return false;
     }
-
     this.itemsInCart = JSON.parse(shoppingCartItems);
-
     if (this.itemsInCart) {
       let items_ids = Object.keys(this.itemsInCart);
       if (items_ids.length == 0) {
@@ -50,13 +44,17 @@ export class ShoppingCartViewComponent {
   removeItemFromShoppingCart(itemId: string) {
     this.shoppingCartService.removeItemFromShoppingCart(itemId);
     if (this.games)
-      this.games = this.games.filter(function(currItem){return itemId != currItem._id;});
+      this.removeGameFromArray(itemId);
+    this.updateTotalPrice();
   }
 
 
   increaseQuantityOfItem(itemId: string) {
     this.shoppingCartService.increaseQuantityOfItemInShoppingCart(itemId);
     this.itemsInCart[itemId] = this.itemsInCart[itemId] + 1;
+    this.itemService.getItem(itemId).subscribe(item => {
+      this.totalPrice += item.price;
+    });
   }
 
   decreaseQuantityOfItem(itemId: string) {
@@ -67,6 +65,9 @@ export class ShoppingCartViewComponent {
     }
     else {
       this.itemsInCart[itemId] = decreasedQuantity;
+      this.itemService.getItem(itemId).subscribe(item => {
+        this.totalPrice -= item.price;
+      });
     }
   }
 
@@ -86,4 +87,17 @@ export class ShoppingCartViewComponent {
     }
   }
 
+  removeGameFromArray(itemId: string) {
+    this.games?.splice(this.games.findIndex(item => item._id = itemId), 1);
+  }
+
+  updateTotalPrice() {
+    let currentItems = this.shoppingCartService.getItemsInShoppingCart();
+    this.totalPrice = 0;
+    for (const item in currentItems) {
+      this.itemService.getItem(item).subscribe(currItem =>  {
+        this.totalPrice += Number(currItem.price * Number(currentItems[item]));
+      });
+    }
+  }
 }

@@ -60,7 +60,7 @@ export class ShoppingCartService {
         return numOfItems;
     }
 
-    private getItemsInShoppingCart(): any {
+    getItemsInShoppingCart(): any {
         let currentItemsInShoppingCart = null;
         const savedShoppingCartItems = localStorage.getItem('shoppingCartItems');
         if (savedShoppingCartItems != null) {
