@@ -3,18 +3,18 @@ button {
   width: 2.8em;
   height: 1.5em;
   font-size: 1.1em;
-  background-color: #416f6f;
+  background-color: #1a65f1;
   border-radius: 1em;
   border: none;
 }
   
 button:hover {
-  background-image: linear-gradient(to left, #416f6f 0%, #295050 100%);
+  background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 100%);
   cursor: pointer;
 }
 
 button:active {
-  background-image: linear-gradient(to left, #416f6f 0%, #295050 51%);
+  background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 51%);
 }
 
 #numOfItems {
