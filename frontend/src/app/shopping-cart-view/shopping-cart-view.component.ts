@@ -45,6 +45,7 @@ export class ShoppingCartViewComponent {
     this.shoppingCartService.removeItemFromShoppingCart(itemId);
     if (this.games)
       this.removeGameFromArray(itemId);
+    delete this.itemsInCart[itemId];
     this.updateTotalPrice();
   }
 
@@ -75,12 +76,12 @@ export class ShoppingCartViewComponent {
     this.games = []
     if (this.itemsInCart) {
       let items_ids = Object.keys(this.itemsInCart);
-
+      
       for(let item of items_ids) {
         this.itemService.getItem(item).subscribe(currItem =>  {
           if (this.games) {
             this.games.push(currItem);
-            this.totalPrice += Number(currItem.price);
+            this.totalPrice += Number(currItem.price) * this.itemsInCart[item];
           }
         });
       }
@@ -92,11 +93,10 @@ export class ShoppingCartViewComponent {
   }
 
   updateTotalPrice() {
-    let currentItems = this.shoppingCartService.getItemsInShoppingCart();
     this.totalPrice = 0;
-    for (const item in currentItems) {
+    for (const item in this.itemsInCart) {
       this.itemService.getItem(item).subscribe(currItem =>  {
-        this.totalPrice += Number(currItem.price * Number(currentItems[item]));
+        this.totalPrice += Number(currItem.price * Number(this.itemsInCart[item]));
       });
     }
   }
