@@ -12,7 +12,7 @@ const ItemSchema = new Schema({
     classification : {type : Number, require : true},
     comments : {type : [String]},
     main_image : {type : String, require : true},
-    sec_images : {type : [String]},
+    sec_images : {type : [String], maxLength : 2},
     video_link : {type : String}
 
 
