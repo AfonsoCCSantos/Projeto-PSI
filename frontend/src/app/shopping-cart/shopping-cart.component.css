@@ -6,6 +6,7 @@ button {
   background-color: #1a65f1;
   border-radius: 1em;
   border: none;
+  color: white;
 }
   
 button:hover {
