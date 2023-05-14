@@ -122,6 +122,15 @@ button {
   height: 50%;
 }
 
+button:hover{
+  background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 100%);
+  cursor: pointer;
+}
+
+button:active{
+  background-image: linear-gradient(to left, #1a65f1 0%, #5e8fea 51%);
+}
+
 li .item-image {
   height: 40%;
   width: 80%;
