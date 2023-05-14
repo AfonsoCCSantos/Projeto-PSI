@@ -6,24 +6,10 @@
   <a *ngIf=!user routerLink="/login" id="login">Log In</a>
   <a class="menuOption" routerLink="/library">Library</a>
 
-
-  <div class="menuOption" id="lists">
-    <a id="list" routerLink="/lists">Lists</a>
-    <ul class="hidden">
-      <li *ngIf="user" routerLink="/wishlist/{{user}}">
-        <p> Wishlist</p>
-      </li>
-      <li *ngIf="user" routerLink="/lists">
-        <p> Custom Lists</p>
-      </li>
-      <li *ngIf="!user" routerLink="/login">
-        <p> Wishlist</p>
-      </li>
-      <li *ngIf="!user" routerLink="/login">
-        <p> Custom Lists</p>
-      </li>
-    </ul>
-  </div>
+  <a class="menuOption" *ngIf="user" routerLink="/wishlist/{{user}}">Wishlist</a>
+  <a class="menuOption" *ngIf="!user" routerLink="/login">Wishlist</a>
+  <a class="menuOption" *ngIf="user" routerLink="/lists">Lists</a>
+  <a class="menuOption" *ngIf="!user" routerLink="/login">Lists</a>
 
   <a class="menuOption" routerLink="/dashboard">Dashboard</a>
   <a class="menuOption" routerLink="/following">Following</a>
